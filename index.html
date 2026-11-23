@@ -454,6 +454,7 @@
         <button type="button" data-nav="catalog" onclick="navigateTo('catalog')" class="nav-pill px-3.5 py-2 rounded-xl text-sm font-bold text-gray-700 hover:bg-red-50 hover:text-red-600 transition">المنتجات</button>
         <button type="button" data-nav="calculator" onclick="navigateTo('calculator')" class="nav-pill px-3.5 py-2 rounded-xl text-sm font-bold text-gray-700 hover:bg-red-50 hover:text-red-600 transition">حاسبة الدولار والتقسيط</button>
         <button type="button" data-nav="compare" onclick="navigateTo('compare')" class="nav-pill px-3.5 py-2 rounded-xl text-sm font-bold text-gray-700 hover:bg-red-50 hover:text-red-600 transition">المقارنة (<span id="navCompareCount">0</span>)</button>
+        <button type="button" data-nav="services" onclick="navigateTo('services')" class="nav-pill px-3.5 py-2 rounded-xl text-sm font-bold text-gray-700 hover:bg-red-50 hover:text-red-600 transition">الخدمات</button>
         <button type="button" data-nav="policies" onclick="navigateTo('policies')" class="nav-pill px-3.5 py-2 rounded-xl text-sm font-bold text-gray-700 hover:bg-red-50 hover:text-red-600 transition">الكفالات والتوصيل</button>
         <button type="button" data-nav="contact" onclick="navigateTo('contact')" class="nav-pill px-3.5 py-2 rounded-xl text-sm font-bold text-gray-700 hover:bg-red-50 hover:text-red-600 transition">تواصل معنا</button>
       </nav>
@@ -496,6 +497,10 @@
           <button type="button" data-nav="companies" onclick="navigateTo('companies')" class="nav-pill px-3 py-1 rounded-lg hover:bg-red-50 hover:text-red-600 transition inline-flex items-center gap-1">
             <i data-lucide="building-2" class="w-3.5 h-3.5 text-red-600"></i>
             دليل الشركات
+          </button>
+          <button type="button" data-nav="services" onclick="navigateTo('services')" class="nav-pill px-3 py-1 rounded-lg hover:bg-red-50 hover:text-red-600 transition inline-flex items-center gap-1">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-red-600"></i>
+            الخدمات الإبداعية
           </button>
           <button type="button" data-nav="track-order" onclick="navigateTo('track-order')" class="nav-pill px-3 py-1 rounded-lg hover:bg-red-50 hover:text-red-600 transition inline-flex items-center gap-1">
             <i data-lucide="receipt" class="w-3.5 h-3.5 text-red-600"></i>
@@ -1629,6 +1634,222 @@
       </div>
     </section>
 
+
+    <!-- ==================== PAGE 16: CREATIVE SERVICES (ENG. AYA MAHFOUD) ==================== -->
+    <section id="page-services" class="page-view">
+      <div class="max-w-7xl mx-auto px-4 py-8 space-y-8">
+        <!-- Hero Banner -->
+        <div class="rounded-3xl kh-gradient text-white p-6 sm:p-10 shadow-xl relative overflow-hidden">
+          <div class="space-y-3 max-w-3xl relative z-10">
+            <span class="inline-flex items-center gap-1.5 bg-white/15 px-3.5 py-1 rounded-full text-xs font-extrabold">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+              ENG. AYA MAHFOUD® — CREATIVE SERVICES &amp; PRICING
+            </span>
+            <h1 class="text-2xl sm:text-4xl font-black leading-snug">
+              الخدمات الإبداعية والتصميم الاحترافي
+            </h1>
+            <p class="text-sm sm:text-base text-red-100 leading-relaxed">
+              حلول متكاملة للتصميم الإعلاني، الهويات البصرية، الشعارات، الريلزات، ومعالجة الصور الشخصية والمناسبات بأسعار واضحة ومباشرة بالدولار والليرة السورية.
+            </p>
+          </div>
+        </div>
+
+        <!-- Services Grid (6 Services from PDF) -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- 01 POSTER DESIGN -->
+          <article class="kh-card rounded-3xl p-6 flex flex-col justify-between gap-5">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-black px-3 py-1 rounded-full bg-red-50 text-red-700">01 — POSTER DESIGN</span>
+                <span class="text-xs font-bold text-gray-400">بوسترات إعلانية</span>
+              </div>
+              <h2 class="text-lg font-black text-gray-900">تصميم بوسترات إعلانية</h2>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                تصميم بوسترات إعلانية إبداعية تلفت الانتباه وتوصل رسالتك باحترافية.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-gray-100 space-y-3">
+              <div class="flex items-baseline justify-between">
+                <span class="text-2xl font-black text-red-600">$7</span>
+                <span id="srvPriceSyp7" class="text-xs font-extrabold text-gray-500"></span>
+              </div>
+              <button type="button" onclick="orderCreativeService('01 - تصميم بوسترات إعلانية (POSTER DESIGN)', 7)" class="w-full kh-gradient text-white text-xs font-black py-3 rounded-xl hover:opacity-95 transition inline-flex items-center justify-center gap-1.5">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                اطلب الخدمة عبر واتساب
+              </button>
+            </div>
+          </article>
+
+          <!-- 02 LOGO DESIGN -->
+          <article class="kh-card rounded-3xl p-6 flex flex-col justify-between gap-5">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-black px-3 py-1 rounded-full bg-red-50 text-red-700">02 — LOGO DESIGN</span>
+                <span class="text-xs font-bold text-gray-400">شعارات احترافية</span>
+              </div>
+              <h2 class="text-lg font-black text-gray-900">تصميم شعارات مميزة</h2>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                تصميم شعارات مميزة تعكس شخصية المشروع وتمنحه حضوراً بصرياً احترافياً.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-gray-100 space-y-3">
+              <div class="flex items-baseline justify-between">
+                <span class="text-2xl font-black text-red-600">$8</span>
+                <span id="srvPriceSyp8" class="text-xs font-extrabold text-gray-500"></span>
+              </div>
+              <button type="button" onclick="orderCreativeService('02 - تصميم شعارات مميزة (LOGO DESIGN)', 8)" class="w-full kh-gradient text-white text-xs font-black py-3 rounded-xl hover:opacity-95 transition inline-flex items-center justify-center gap-1.5">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                اطلب الخدمة عبر واتساب
+              </button>
+            </div>
+          </article>
+
+          <!-- 03 CREATIVE PHOTO DESIGN -->
+          <article class="kh-card rounded-3xl p-6 flex flex-col justify-between gap-5">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-black px-3 py-1 rounded-full bg-red-50 text-red-700">03 — CREATIVE PHOTO DESIGN</span>
+                <span class="text-xs font-bold text-gray-400">صور ومناسبات</span>
+              </div>
+              <h2 class="text-lg font-black text-gray-900">تصميم الصور الإبداعية وتعديلها</h2>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                تصميم الصور الشخصية وجلسات الأطفال والخطوبة والتخرج، بالإضافة إلى التعديلات الاحترافية على مختلف أنواع الصور.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-gray-100 space-y-3">
+              <div class="flex items-baseline justify-between">
+                <span class="text-2xl font-black text-red-600">$5</span>
+                <span id="srvPriceSyp5" class="text-xs font-extrabold text-gray-500"></span>
+              </div>
+              <button type="button" onclick="orderCreativeService('03 - تصميم الصور الإبداعية وتعديلها (CREATIVE PHOTO DESIGN)', 5)" class="w-full kh-gradient text-white text-xs font-black py-3 rounded-xl hover:opacity-95 transition inline-flex items-center justify-center gap-1.5">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                اطلب الخدمة عبر واتساب
+              </button>
+            </div>
+          </article>
+
+          <!-- 04 REELS DESIGN -->
+          <article class="kh-card rounded-3xl p-6 flex flex-col justify-between gap-5">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-black px-3 py-1 rounded-full bg-red-50 text-red-700">04 — REELS DESIGN</span>
+                <span class="text-xs font-bold text-gray-400">مونتاج وريلزات</span>
+              </div>
+              <h2 class="text-lg font-black text-gray-900">تصميم ومونتاج ريلزات قصيرة</h2>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                تصميم ومونتاج ريلزات قصيرة بإخراج إبداعي جذاب يناسب منصات التواصل الاجتماعي.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-gray-100 space-y-3">
+              <div class="flex items-baseline justify-between">
+                <span class="text-2xl font-black text-red-600">$15</span>
+                <span id="srvPriceSyp15" class="text-xs font-extrabold text-gray-500"></span>
+              </div>
+              <button type="button" onclick="orderCreativeService('04 - تصميم ومونتاج ريلزات قصيرة (REELS DESIGN)', 15)" class="w-full kh-gradient text-white text-xs font-black py-3 rounded-xl hover:opacity-95 transition inline-flex items-center justify-center gap-1.5">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                اطلب الخدمة عبر واتساب
+              </button>
+            </div>
+          </article>
+
+          <!-- 05 ADVERTISING BUNDLE -->
+          <article class="kh-card rounded-3xl p-6 flex flex-col justify-between gap-5">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-black px-3 py-1 rounded-full bg-red-50 text-red-700">05 — ADVERTISING BUNDLE</span>
+                <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full">باقة 5 تصاميم</span>
+              </div>
+              <h2 class="text-lg font-black text-gray-900">باقة إعلانية (5 بوسترات)</h2>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                باقة تضم 5 بوسترات إعلانية متناسقة لتعزيز الحضور البصري للعلامات التجارية.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-gray-100 space-y-3">
+              <div class="flex items-baseline justify-between">
+                <span class="text-2xl font-black text-red-600">$20</span>
+                <span id="srvPriceSyp20a" class="text-xs font-extrabold text-gray-500"></span>
+              </div>
+              <button type="button" onclick="orderCreativeService('05 - باقة إعلانية 5 بوسترات (ADVERTISING BUNDLE)', 20)" class="w-full kh-gradient text-white text-xs font-black py-3 rounded-xl hover:opacity-95 transition inline-flex items-center justify-center gap-1.5">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                اطلب الخدمة عبر واتساب
+              </button>
+            </div>
+          </article>
+
+          <!-- 06 VISUAL IDENTITY -->
+          <article class="kh-card rounded-3xl p-6 flex flex-col justify-between gap-5">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-black px-3 py-1 rounded-full bg-red-50 text-red-700">06 — VISUAL IDENTITY</span>
+                <span class="text-xs font-bold text-gray-400">هوية متكاملة</span>
+              </div>
+              <h2 class="text-lg font-black text-gray-900">تصميم هوية بصرية متكاملة</h2>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                تصميم هوية بصرية متكاملة تمنح المشروع شخصية مميزة واتساقاً بصرياً.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-gray-100 space-y-3">
+              <div class="flex items-baseline justify-between">
+                <span class="text-2xl font-black text-red-600">$20</span>
+                <span id="srvPriceSyp20b" class="text-xs font-extrabold text-gray-500"></span>
+              </div>
+              <button type="button" onclick="orderCreativeService('06 - تصميم هوية بصرية متكاملة (VISUAL IDENTITY)', 20)" class="w-full kh-gradient text-white text-xs font-black py-3 rounded-xl hover:opacity-95 transition inline-flex items-center justify-center gap-1.5">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                اطلب الخدمة عبر واتساب
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <!-- My Creative Approach (4 Pillars from PDF) -->
+        <div class="bg-white rounded-3xl border border-gray-200 p-6 sm:p-8 shadow-sm space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-gray-100 pb-4">
+            <div>
+              <span class="text-xs font-extrabold text-red-600">MY CREATIVE APPROACH</span>
+              <h2 class="text-xl sm:text-2xl font-black text-gray-900 mt-0.5">منهجية العمل الإبداعي — LET'S CREATE SOMETHING EXTRAORDINARY</h2>
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="p-5 rounded-2xl bg-gray-50 border border-gray-200 space-y-2">
+              <div class="text-xs font-black text-red-600">01 — AI-POWERED CREATIVITY</div>
+              <h3 class="font-black text-gray-900 text-sm">إبداع مدعوم بالذكاء الاصطناعي</h3>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                توظيف تقنيات الذكاء الاصطناعي في تنفيذ الأفكار البصرية.
+              </p>
+            </div>
+            <div class="p-5 rounded-2xl bg-gray-50 border border-gray-200 space-y-2">
+              <div class="text-xs font-black text-red-600">02 — VISUAL STORYTELLING</div>
+              <h3 class="font-black text-gray-900 text-sm">سرد بصري مؤثر</h3>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                تحويل الأفكار والرسائل إلى محتوى بصري جذاب.
+              </p>
+            </div>
+            <div class="p-5 rounded-2xl bg-gray-50 border border-gray-200 space-y-2">
+              <div class="text-xs font-black text-red-600">03 — ATTENTION TO DETAIL</div>
+              <h3 class="font-black text-gray-900 text-sm">اهتمام دقيق بالتفاصيل</h3>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                الاهتمام بالتفاصيل والتناسق والجودة النهائية.
+              </p>
+            </div>
+            <div class="p-5 rounded-2xl bg-gray-50 border border-gray-200 space-y-2">
+              <div class="text-xs font-black text-red-600">04 — CREATIVE SOLUTIONS</div>
+              <h3 class="font-black text-gray-900 text-sm">حلول إبداعية مخصصة</h3>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                تقديم حلول تصميمية تناسب احتياجات الأفراد والمشاريع.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- End of Page Credit Required by User -->
+        <div class="pt-4 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-center">
+          <div class="text-base sm:text-lg font-black text-gray-900">م.آية محفوض</div>
+          <div class="text-xs text-gray-500 font-semibold">ENG. AYA MAHFOUD® — CREATIVE SERVICES &amp; PRICING</div>
+        </div>
+      </div>
+    </section>
+
     <!-- ==================== PAGE 15: DEPLOYMENT & GITHUB PAGES EXPORTER ==================== -->
     <section id="page-deploy-guide" class="page-view">
       <div class="max-w-7xl mx-auto px-4 py-8 space-y-6">
@@ -1691,6 +1912,7 @@
         <div class="flex flex-col gap-1.5 text-xs">
           <button type="button" onclick="navigateTo('home')" class="text-right hover:text-red-400 transition">الرئيسية</button>
           <button type="button" onclick="navigateTo('catalog')" class="text-right hover:text-red-400 transition">كتالوج المنتجات</button>
+          <button type="button" onclick="navigateTo('services')" class="text-right hover:text-red-400 transition">الخدمات الإبداعية</button>
           <button type="button" onclick="navigateTo('calculator')" class="text-right hover:text-red-400 transition">آلة حاسبة الدولار والتقسيط</button>
           <button type="button" onclick="navigateTo('submit-product')" class="text-right hover:text-red-400 transition">أضف منتجك (للشركات والزبائن)</button>
         </div>
@@ -2155,7 +2377,7 @@
     // NAVIGATION & ROUTING
     // =========================================================================
     function navigateTo(page, param = null) {
-      const validPages = ['home', 'catalog', 'product', 'calculator', 'submit-product', 'cart', 'compare', 'wishlist', 'policies', 'admin', 'contact', 'deals', 'companies', 'track-order', 'deploy-guide'];
+      const validPages = ['home', 'catalog', 'product', 'calculator', 'submit-product', 'cart', 'compare', 'wishlist', 'policies', 'admin', 'contact', 'deals', 'companies', 'track-order', 'deploy-guide', 'services'];
       if (!validPages.includes(page)) page = 'home';
       if ((page === 'admin' || page === 'deploy-guide') && !state.isOwner) {
         openOwnerLoginModal(page);
@@ -2198,6 +2420,7 @@
       if (page === 'deals') renderDealsPage();
       if (page === 'companies') renderCompaniesPage();
       if (page === 'track-order') renderOrderHistoryPage();
+      if (page === 'services') renderServicesPage();
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
       refreshIcons();
@@ -4305,6 +4528,7 @@
       { id: 'companies', title: 'دليل الشركات والماركات', sub: 'تصفح المنتجات حسب الشركة', icon: 'building-2' },
       { id: 'submit-product', title: 'إضافة منتج (للشركات والزبائن)', sub: 'أرسل منتجك ليظهر في المتجر', icon: 'plus-circle' },
       { id: 'track-order', title: 'سجل الطلبات والفواتير', sub: 'طباعة الفواتير ومتابعة الطلبات', icon: 'receipt' },
+      { id: 'services', title: 'الخدمات الإبداعية والتصميم', sub: 'خدمات م. آية محفوض والباقات والأسعار', icon: 'sparkles' },
       { id: 'policies', title: 'سياسات الكفالات والتوصيل', sub: 'الضمان والشحن والأسئلة الشائعة', icon: 'shield-check' },
       { id: 'contact', title: 'تواصل معنا', sub: 'واتساب 0935175841 والدعم المباشر', icon: 'phone-call' }
     ];
@@ -4663,6 +4887,35 @@
         if (btn) btn.classList.toggle('show', scrollTop > 260);
         if (ring) ring.style.strokeDashoffset = (125.66 * (1 - pct)).toFixed(2);
       }, { passive: true });
+    }
+
+
+    function renderServicesPage() {
+      const mapIds = [
+        ['srvPriceSyp5', 5],
+        ['srvPriceSyp7', 7],
+        ['srvPriceSyp8', 8],
+        ['srvPriceSyp15', 15],
+        ['srvPriceSyp20a', 20],
+        ['srvPriceSyp20b', 20]
+      ];
+      mapIds.forEach(([elId, usd]) => {
+        const el = document.getElementById(elId);
+        if (el) el.textContent = formatSyp(usd);
+      });
+      bindCardMagicInteractions();
+      refreshIcons();
+    }
+
+    function orderCreativeService(serviceName, usdPrice) {
+      const msg = [
+        `🎨 *طلب خدمة تصميم — ${state.config.storeName}*`,
+        `• الخدمة: *${serviceName}*`,
+        `• السعر: $${usdPrice} (${formatSyp(usdPrice)})`,
+        `• إعداد وتقديم: م.آية محفوض`,
+        `يرجى التواصل لتأكيد التفاصيل والبدء بالتنفيذ.`
+      ].join('\n');
+      openWhatsAppMessage(msg);
     }
 
     function initApp() {
