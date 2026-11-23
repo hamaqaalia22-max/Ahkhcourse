@@ -1579,7 +1579,7 @@
 
   <!-- Image Lightbox Zoom Modal -->
   <div id="lightboxModal" onclick="closeModal('lightboxModal')" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 cursor-zoom-out">
-    <img id="lightboxImg" src="" alt="تكبير الصورة" class="max-w-full max-h-[88vh] rounded-2xl shadow-2xl object-contain" />
+    <img id="lightboxImg" src="" alt="تكبير الصورة" referrerpolicy="no-referrer" class="max-w-full max-h-[88vh] rounded-2xl shadow-2xl object-contain" />
   </div>
 
   <!-- Toast Container -->
@@ -1717,8 +1717,13 @@
     }
 
     function normalizeImageUrl(url) {
-      const clean = String(url || '').trim();
+      let clean = String(url || '').trim();
       if (!clean) return '';
+      // Upgrade http:// to https:// and collapse accidental double slashes in paths
+      if (clean.startsWith('http://')) clean = 'https://' + clean.slice(7);
+      if (clean.startsWith('https://')) {
+        clean = 'https://' + clean.slice(8).replace(/\/{2,}/g, '/');
+      }
       // Auto-convert Google Drive share links to direct viewable image links
       const driveMatch = clean.match(/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)/) ||
                          clean.match(/drive\.google\.com\/open\?id=([a-zA-Z0-9_-]+)/) ||
@@ -1727,6 +1732,29 @@
         return `https://lh3.googleusercontent.com/d/${driveMatch[1]}`;
       }
       return clean;
+    }
+
+    function handleProductImgError(imgEl) {
+      if (!imgEl) return;
+      const orig = imgEl.getAttribute('data-orig-src') || '';
+      const stage = Number(imgEl.getAttribute('data-retry-stage') || '0');
+      if (orig && orig.startsWith('https://')) {
+        if (stage === 0) {
+          imgEl.setAttribute('data-retry-stage', '1');
+          imgEl.src = `https://wsrv.nl/?url=${encodeURIComponent(orig)}&w=800&fit=inside&output=webp`;
+          return;
+        }
+        if (stage === 1) {
+          imgEl.setAttribute('data-retry-stage', '2');
+          imgEl.src = `https://i0.wp.com/${orig.replace(/^https?:\/\//, '')}?w=800`;
+          return;
+        }
+      }
+      imgEl.onerror = null;
+      imgEl.style.display = 'none';
+      if (imgEl.nextElementSibling) {
+        imgEl.nextElementSibling.style.display = 'flex';
+      }
     }
 
     function getFallbackImageSvg(title) {
@@ -1741,10 +1769,10 @@
     function renderProductImageHtml(url, alt, extraClasses = 'w-full h-full object-cover') {
       const src = normalizeImageUrl(url);
       if (!src) return getFallbackImageSvg(alt);
-      return `<img src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" class="${extraClasses}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      return `<img src="${escapeHtml(src)}" data-orig-src="${escapeHtml(src)}" data-retry-stage="0" alt="${escapeHtml(alt)}" referrerpolicy="no-referrer" loading="lazy" decoding="async" class="${extraClasses}" onerror="handleProductImgError(this)" />
               <div style="display:none" class="w-full h-full bg-gradient-to-br from-gray-50 to-red-50 flex-col items-center justify-center p-4 text-center">
                 <div class="w-10 h-10 rounded-xl bg-red-100 text-red-600 font-black flex items-center justify-center text-sm mb-1.5">KH</div>
-                <span class="text-[11px] font-bold text-gray-500">تعذّر تحميل رابط الصورة</span>
+                <span class="text-[11px] font-bold text-gray-500">${escapeHtml((alt || 'KH Product').slice(0, 28))}</span>
               </div>`;
     }
 
@@ -2192,7 +2220,7 @@
               <div class="flex gap-2 overflow-x-auto pb-1">
                 ${gallery.map((img, idx) => `
                   <button type="button" onclick="setDetailMainImage('${escapeHtml(img)}')" class="w-16 h-16 rounded-xl border-2 ${idx === 0 ? 'border-red-600' : 'border-gray-200'} overflow-hidden shrink-0 bg-white">
-                    <img src="${escapeHtml(img)}" alt="" class="w-full h-full object-cover" />
+                    <img src="${escapeHtml(normalizeImageUrl(img))}" data-orig-src="${escapeHtml(normalizeImageUrl(img))}" data-retry-stage="0" alt="" referrerpolicy="no-referrer" loading="lazy" class="w-full h-full object-cover" onerror="handleProductImgError(this)" />
                   </button>
                 `).join('')}
               </div>
@@ -2892,7 +2920,7 @@
         box.innerHTML = 'معاينة الصورة';
         return;
       }
-      box.innerHTML = `<img src="${escapeHtml(normalized)}" alt="معاينة" class="w-full h-full object-cover" />`;
+      box.innerHTML = renderProductImageHtml(normalized, 'معاينة', 'w-full h-full object-cover');
     }
 
     function resetManualForm() {
