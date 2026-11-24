@@ -420,6 +420,31 @@
       100% { background-position: 200% center; }
     }
 
+
+    /* === RICH WHITE FRIDAY VISUAL ARTWORK & PROMO MOTION === */
+    .wf-hero-stage {
+      background:
+        radial-gradient(circle at 85% 15%, rgba(244, 63, 94, 0.28), transparent 42%),
+        radial-gradient(circle at 12% 88%, rgba(220, 38, 38, 0.25), transparent 45%),
+        linear-gradient(135deg, #090b10 0%, #1d060b 52%, #6e0216 100%);
+    }
+    @keyframes wfRibbonSlide {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(50%); }
+    }
+    .wf-ticker-track {
+      display: flex;
+      width: max-content;
+      animation: wfRibbonSlide 22s linear infinite;
+    }
+    @keyframes wfSpotlightPulse {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 12px 24px rgba(244, 63, 94, 0.28)); }
+      50% { transform: scale(1.03); filter: drop-shadow(0 18px 32px rgba(244, 63, 94, 0.45)); }
+    }
+    .wf-device-float {
+      animation: wfSpotlightPulse 3.6s ease-in-out infinite;
+    }
+
   </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -650,7 +675,18 @@
 
       <!-- ==================== WHITE FRIDAY INTERACTIVE SHOWCASE ==================== -->
       <div id="whiteFridayBanner" class="max-w-7xl mx-auto px-4 pt-6">
-        <div class="wf-glow-card rounded-3xl bg-gradient-to-l from-gray-950 via-[#1d070c] to-[#8f021b] text-white p-5 sm:p-7 border border-red-500/40 relative overflow-hidden">
+        <div class="wf-glow-card wf-hero-stage rounded-3xl text-white p-5 sm:p-8 border border-red-500/40 relative overflow-hidden">
+          <!-- Decorative SVG Graphic Badges & Promo Marquee Strip -->
+          <div class="bg-black/45 border border-white/10 rounded-2xl px-3 py-2 mb-5 overflow-hidden relative z-10">
+            <div class="wf-ticker-track gap-8 text-[11px] font-black text-rose-200 whitespace-nowrap">
+              <span>⚡ WHITE FRIDAY — خصومات حصرية حتى 11% على أقوى أجهزة اللابتوب</span>
+              <span>🔥 كفالة الوكالة الرسمية المعتمدة + توصيل لكافة المحافظات</span>
+              <span>💎 عرض السعر القديم المشطوب بجانب سعر الجمعة البيضاء المباشر</span>
+              <span>⚡ WHITE FRIDAY — خصومات حصرية حتى 11% على أقوى أجهزة اللابتوب</span>
+              <span>🔥 كفالة الوكالة الرسمية المعتمدة + توصيل لكافة المحافظات</span>
+              <span>💎 عرض السعر القديم المشطوب بجانب سعر الجمعة البيضاء المباشر</span>
+            </div>
+          </div>
           <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-5 relative z-10">
             <div class="space-y-2 max-w-2xl">
               <div class="inline-flex items-center gap-2 bg-red-600/90 text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide">
@@ -692,6 +728,10 @@
           </div>
 
           
+          
+          <!-- Interactive White Friday Graphic Spotlight Banner -->
+          <div id="wfSpotlightBox" class="grid lg:grid-cols-12 gap-5 items-center bg-white/5 backdrop-blur-md border border-white/15 rounded-3xl p-4 sm:p-5 mt-5 relative z-10"></div>
+
           <!-- Interactive White Friday Filter Tabs & Replay Popup Trigger -->
           <div class="flex flex-wrap items-center justify-between gap-3 mt-5 pt-4 border-t border-white/10 relative z-10">
             <div class="flex flex-wrap gap-2">
@@ -4715,7 +4755,7 @@
     "brand": "ASUS",
     "category": "لابتوبات جيمنج (الوكالة الرسمية)",
     "priceUsd": 3299,
-    "oldPriceUsd": 3449,
+    "oldPriceUsd": 0,
     "imageUrl": "https://dlcdnwebimgs.asus.com/files/media/d5444a20-d912-40e3-9a48-bbacc1e3a4e6/v1/images/Strix_G18_KV_1x1.webp",
     "extraImages": [],
     "features": [
@@ -4747,7 +4787,7 @@
     "brand": "Lenovo",
     "category": "لابتوبات جيمنج (الوكالة الرسمية)",
     "priceUsd": 2659,
-    "oldPriceUsd": 2759,
+    "oldPriceUsd": 0,
     "imageUrl": "https://i5.walmartimages.com/seo/Lenovo-Legion-Pro-5-16IAX10H-83LU-Intel-Core-Ultra-9-275HX-5-4-GHz-Win-11-Home-GeForce-RTX-5070-Ti-32-GB-RAM-1-TB-SSD-NVMe-x-2-16-OLED-2560-x-1600-WQ_07f071a5-1a04-4667-98f1-868f1a56c719.7ea08e189295ec264c7f57f01667f355.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
     "extraImages": [],
     "features": [
@@ -4779,7 +4819,7 @@
     "brand": "ASUS",
     "category": "لابتوبات جيمنج (الوكالة الرسمية)",
     "priceUsd": 2649,
-    "oldPriceUsd": 2749,
+    "oldPriceUsd": 0,
     "imageUrl": "https://dlcdnwebimgs.asus.com/files/media/d5444a20-d912-40e3-9a48-bbacc1e3a4e6/v1/images/Strix_G18_KV_1x1.webp",
     "extraImages": [],
     "features": [
@@ -4811,7 +4851,7 @@
     "brand": "ASUS",
     "category": "لابتوبات جيمنج (الوكالة الرسمية)",
     "priceUsd": 2549,
-    "oldPriceUsd": 2649,
+    "oldPriceUsd": 0,
     "imageUrl": "https://dlcdnwebimgs.asus.com/files/media/71a33ba1-1be2-44c1-9541-70b4c800abf8/v1/images/Strix_G16_KV_1x1.webp",
     "extraImages": [],
     "features": [
@@ -4843,7 +4883,7 @@
     "brand": "ASUS",
     "category": "لابتوبات جيمنج (الوكالة الرسمية)",
     "priceUsd": 2399,
-    "oldPriceUsd": 2499,
+    "oldPriceUsd": 0,
     "imageUrl": "https://dlcdnwebimgs.asus.com/files/media/601ee339-f392-4b62-87c3-972107bda726/v1/img/kv/pd-front.png",
     "extraImages": [],
     "features": [
@@ -4875,7 +4915,7 @@
     "brand": "ASUS",
     "category": "لابتوبات جيمنج (الوكالة الرسمية)",
     "priceUsd": 2099,
-    "oldPriceUsd": 2199,
+    "oldPriceUsd": 0,
     "imageUrl": "https://dlcdnwebimgs.asus.com/files/media/601ee339-f392-4b62-87c3-972107bda726/v1/img/kv/pd-front.png",
     "extraImages": [],
     "features": [
@@ -4907,7 +4947,7 @@
     "brand": "MSI",
     "category": "لابتوبات جيمنج (الوكالة الرسمية)",
     "priceUsd": 1949,
-    "oldPriceUsd": 2049,
+    "oldPriceUsd": 0,
     "imageUrl": "https://es-store.msi.com/cdn/shop/files/portatil-gaming-msi-vector-16-hx-ai-a2xwhg-097xes.png?v=1741253504&width=640",
     "extraImages": [],
     "features": [
@@ -4939,7 +4979,7 @@
     "brand": "HP",
     "category": "لابتوبات جيمنج (الوكالة الرسمية)",
     "priceUsd": 1699,
-    "oldPriceUsd": 1749,
+    "oldPriceUsd": 0,
     "imageUrl": "https://cdn.microless.com/products/83b6cd38d89e208ed934c2886032a65b-hi.jpg",
     "extraImages": [],
     "features": [
@@ -5035,7 +5075,7 @@
     "brand": "Lenovo",
     "category": "لابتوبات جيمنج (الوكالة الرسمية)",
     "priceUsd": 1399,
-    "oldPriceUsd": 1425,
+    "oldPriceUsd": 0,
     "imageUrl": "https://psrefstuff.lenovo.com/syspool/Sys/Image/LOQ/LOQ_15IRX10/Compressedimage/LOQ_15IRX10_CT2_01.png",
     "extraImages": [],
     "features": [
@@ -5099,7 +5139,7 @@
     "brand": "Lenovo",
     "category": "لابتوبات أعمال ومكتبية (الوكالة الرسمية)",
     "priceUsd": 1399,
-    "oldPriceUsd": 1479,
+    "oldPriceUsd": 0,
     "imageUrl": "https://p1-ofp.static.pub/fes/cms/2025/04/08/mi5qm8tr8bx7flftut4lop021yuv1z747949.png?width=328&height=328",
     "extraImages": [],
     "features": [
@@ -5131,7 +5171,7 @@
     "brand": "HP",
     "category": "لابتوبات أعمال ومكتبية (الوكالة الرسمية)",
     "priceUsd": 949,
-    "oldPriceUsd": 999,
+    "oldPriceUsd": 0,
     "imageUrl": "https://hp.widen.net/content/ulockcjchm/webp/ulockcjchm.png?w=573&h=430&dpi=72&color=ffffff00",
     "extraImages": [],
     "features": [
@@ -5163,7 +5203,7 @@
     "brand": "HP",
     "category": "لابتوبات أعمال ومكتبية (الوكالة الرسمية)",
     "priceUsd": 819,
-    "oldPriceUsd": 879,
+    "oldPriceUsd": 0,
     "imageUrl": "https://hp.widen.net/content/lvgij6avnx/webp/lvgij6avnx.png?w=573&h=430&dpi=72&color=ffffff00",
     "extraImages": [],
     "features": [
@@ -5195,7 +5235,7 @@
     "brand": "Lenovo",
     "category": "لابتوبات أعمال ومكتبية (الوكالة الرسمية)",
     "priceUsd": 719,
-    "oldPriceUsd": 749,
+    "oldPriceUsd": 0,
     "imageUrl": "https://psrefstuff.lenovo.com/syspool/Sys/Image/Lenovo/Lenovo_V15_G5_IRL/Compressedimage/Lenovo_V15_G5_IRL_CT2_04.png",
     "extraImages": [],
     "features": [
@@ -5291,7 +5331,7 @@
     "brand": "HP",
     "category": "لابتوبات أعمال ومكتبية (الوكالة الرسمية)",
     "priceUsd": 599,
-    "oldPriceUsd": 649,
+    "oldPriceUsd": 0,
     "imageUrl": "https://hp.widen.net/content/rrkegya2gt/webp/rrkegya2gt.png?w=573&h=430&dpi=72&color=ffffff00",
     "extraImages": [],
     "features": [
@@ -5323,7 +5363,7 @@
     "brand": "Acer",
     "category": "لابتوبات أعمال ومكتبية (الوكالة الرسمية)",
     "priceUsd": 589,
-    "oldPriceUsd": 659,
+    "oldPriceUsd": 0,
     "imageUrl": "https://c1.neweggimages.com/productimage/nb640/B32ZS260422156R8P84.jpg",
     "extraImages": [],
     "features": [
@@ -5355,7 +5395,7 @@
     "brand": "HP",
     "category": "لابتوبات أعمال ومكتبية (الوكالة الرسمية)",
     "priceUsd": 579,
-    "oldPriceUsd": 629,
+    "oldPriceUsd": 0,
     "imageUrl": "https://hp.widen.net/content/5a07fhlysy/webp/5a07fhlysy.png?w=573&h=430&dpi=72&color=ffffff00",
     "extraImages": [],
     "features": [
@@ -5387,7 +5427,7 @@
     "brand": "HP",
     "category": "لابتوبات أعمال ومكتبية (الوكالة الرسمية)",
     "priceUsd": 559,
-    "oldPriceUsd": 609,
+    "oldPriceUsd": 0,
     "imageUrl": "https://hp.widen.net/content/5a07fhlysy/webp/5a07fhlysy.png?w=573&h=430&dpi=72&color=ffffff00",
     "extraImages": [],
     "features": [
@@ -5451,7 +5491,7 @@
     "brand": "HP",
     "category": "لابتوبات أعمال ومكتبية (الوكالة الرسمية)",
     "priceUsd": 549,
-    "oldPriceUsd": 599,
+    "oldPriceUsd": 0,
     "imageUrl": "https://hp.widen.net/content/rrkegya2gt/webp/rrkegya2gt.png?w=573&h=430&dpi=72&color=ffffff00",
     "extraImages": [],
     "features": [
@@ -5483,7 +5523,7 @@
     "brand": "HP",
     "category": "لابتوبات أعمال ومكتبية (الوكالة الرسمية)",
     "priceUsd": 519,
-    "oldPriceUsd": 569,
+    "oldPriceUsd": 0,
     "imageUrl": "https://hp.widen.net/content/5a07fhlysy/webp/5a07fhlysy.png?w=573&h=430&dpi=72&color=ffffff00",
     "extraImages": [],
     "features": [
@@ -5515,7 +5555,7 @@
     "brand": "Lenovo",
     "category": "لابتوبات أعمال ومكتبية (الوكالة الرسمية)",
     "priceUsd": 429,
-    "oldPriceUsd": 449,
+    "oldPriceUsd": 0,
     "imageUrl": "https://psrefstuff.lenovo.com/syspool/Sys/Image/Lenovo/Lenovo_V15_G5_IRL/Compressedimage/Lenovo_V15_G5_IRL_CT2_04.png",
     "extraImages": [],
     "features": [
@@ -5877,13 +5917,14 @@
       navigateTo(state.currentPage, state.currentProductId);
     }
 
-    function formatPriceDisplay(usd, oldUsd = null) {
+    function formatPriceDisplay(usd, oldUsd = null, isWfDeal = false) {
       const mode = state.config.currencyMode;
+      const showOld = Boolean(isWfDeal && oldUsd && Number(oldUsd) > Number(usd));
       let html = '<div class="space-y-0.5">';
       if (mode === 'both' || mode === 'usd') {
         html += `<div class="flex items-baseline gap-2 flex-wrap">
           <span class="text-lg font-black text-red-600">${formatUsd(usd)}</span>
-          ${oldUsd && Number(oldUsd) > Number(usd) ? `<span class="text-xs text-gray-400 line-through font-bold">${formatUsd(oldUsd)}</span>` : ''}
+          ${showOld ? `<span class="text-xs text-gray-400 line-through font-bold">${formatUsd(oldUsd)}</span>` : ''}
         </div>`;
       }
       if (mode === 'both' || mode === 'syp') {
@@ -6056,7 +6097,7 @@
             </div>
 
             <div class="pt-2 border-t border-gray-100 space-y-3">
-              ${formatPriceDisplay(getDisplayPrice(p), getDisplayOldPrice(p))}
+              ${formatPriceDisplay(getDisplayPrice(p), getDisplayOldPrice(p), isWhiteFridayProduct(p))}
               <div class="grid grid-cols-2 gap-2">
                 <button type="button" onclick="addToCart('${escapeHtml(p.id)}')" class="bg-gray-950 hover:bg-gray-800 text-white text-xs font-extrabold py-2.5 rounded-xl transition inline-flex items-center justify-center gap-1.5">
                   <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
@@ -6091,7 +6132,10 @@
       if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
+    let filterWhiteFridayOnlyMode = false;
+
     function openCatalogCategory(cat) {
+      filterWhiteFridayOnlyMode = (cat === 'عروض الجمعة البيضاء');
       navigateTo('catalog');
       populateCatalogCategoryDropdown();
       const sel = document.getElementById('filterCategory');
@@ -6099,6 +6143,11 @@
         sel.value = cat;
         renderCatalog();
       }
+    }
+
+    function isWhiteFridayProduct(p) {
+      if (!p) return false;
+      return p.category === 'عروض الجمعة البيضاء' || String(p.id || '').startsWith('KH-WF-');
     }
 
     function setHomeCategory(cat) {
@@ -6243,7 +6292,11 @@
           const hay = `${p.name} ${p.brand} ${p.category} ${p.description} ${(p.features || []).join(' ')} ${p.id}`.toLowerCase();
           if (!hay.includes(q)) return false;
         }
-        if (cat !== 'all' && p.category !== cat) return false;
+        if (filterWhiteFridayOnlyMode || cat === 'عروض الجمعة البيضاء') {
+          if (!isWhiteFridayProduct(p)) return false;
+        } else if (cat !== 'all' && p.category !== cat) {
+          return false;
+        }
         if (maxPrice > 0 && getDisplayPrice(p) > maxPrice) return false;
         if (deliveryOnly && !p.delivery) return false;
         if (instOnly && !p.installment) return false;
@@ -6271,6 +6324,7 @@
     }
 
     function resetCatalogFilters() {
+      filterWhiteFridayOnlyMode = false;
       document.getElementById('filterSearch').value = '';
       document.getElementById('filterCategory').value = 'all';
       document.getElementById('filterSort').value = 'newest';
@@ -7617,7 +7671,7 @@
           <div class="sm:col-span-7 space-y-3">
             <div class="text-xs font-bold text-red-600">${escapeHtml(p.category || 'عام')} ${p.brand ? '• ' + escapeHtml(p.brand) : ''}</div>
             <h3 class="text-xl font-black text-gray-900">${escapeHtml(p.name)}</h3>
-            ${formatPriceDisplay(getDisplayPrice(p), getDisplayOldPrice(p))}
+            ${formatPriceDisplay(getDisplayPrice(p), getDisplayOldPrice(p), isWhiteFridayProduct(p))}
             <div class="flex flex-wrap gap-1.5 text-[11px] font-bold">
               ${p.warranty ? `<span class="bg-gray-100 px-2.5 py-1 rounded-lg">كفالة: ${escapeHtml(p.warranty)}</span>` : ''}
               <span class="${p.delivery ? 'bg-emerald-50 text-emerald-700' : 'bg-gray-100 text-gray-500'} px-2.5 py-1 rounded-lg">${p.delivery ? 'توصيل متاح' : 'استلام من المتجر'}</span>
@@ -8474,7 +8528,56 @@
       closeModal('whiteFridayEntryModal');
     }
 
+
+    let wfSpotlightIdx = 0;
+
+    function renderWfSpotlight() {
+      const box = document.getElementById('wfSpotlightBox');
+      if (!box) return;
+      const wfAll = state.products.filter(isWhiteFridayProduct);
+      if (!wfAll.length) {
+        box.innerHTML = '';
+        return;
+      }
+      const p = wfAll[wfSpotlightIdx % wfAll.length];
+      const cur = getDisplayPrice(p);
+      const old = getDisplayOldPrice(p);
+      const saveUsd = old > cur ? (old - cur) : 0;
+
+      box.innerHTML = `
+        <div class="lg:col-span-5 flex flex-col items-center justify-center bg-gradient-to-br from-white/10 to-red-950/40 rounded-2xl p-4 border border-white/10 relative">
+          <div class="w-40 h-32 sm:w-48 sm:h-36 wf-device-float flex items-center justify-center">
+            ${renderProductImageHtml(p.imageUrl, p.name, 'w-full h-full object-contain rounded-xl')}
+          </div>
+          <div class="flex items-center gap-1.5 mt-3">
+            ${wfAll.map((item, i) => `
+              <button type="button" onclick="wfSpotlightIdx=${i}; renderWfSpotlight();" class="h-2 rounded-full transition-all ${i === (wfSpotlightIdx % wfAll.length) ? 'w-7 bg-red-500' : 'w-2 bg-white/30 hover:bg-white/60'}" aria-label="عرض ${i+1}"></button>
+            `).join('')}
+          </div>
+        </div>
+        <div class="lg:col-span-7 space-y-3 text-right">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="bg-red-600 text-white text-[11px] font-black px-3 py-1 rounded-full">عرض مميز من الجمعة البيضاء</span>
+            ${saveUsd > 0 ? `<span class="bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-[11px] font-black px-3 py-1 rounded-full">توفير فوري ${formatUsd(saveUsd)}</span>` : ''}
+          </div>
+          <h3 class="text-lg sm:text-2xl font-black text-white leading-snug">${escapeHtml(p.name.replace('White Friday Deal — ', ''))}</h3>
+          <p class="text-xs sm:text-sm text-rose-100/90 leading-relaxed">${escapeHtml(p.description || '')}</p>
+          <div class="flex flex-wrap items-baseline gap-3 pt-1">
+            <span class="text-2xl font-black text-red-400">${formatUsd(cur)}</span>
+            ${old > cur ? `<span class="text-sm text-gray-400 line-through font-bold">${formatUsd(old)}</span>` : ''}
+            <span class="text-xs font-extrabold text-gray-200 bg-white/10 px-3 py-1 rounded-xl">${formatSyp(cur)}</span>
+          </div>
+          <div class="flex flex-wrap gap-2.5 pt-1">
+            <button type="button" onclick="addToCart('${escapeHtml(p.id)}')" class="kh-gradient text-white font-black px-5 py-2.5 rounded-xl text-xs shadow hover:opacity-95 transition">أضف العرض للسلة</button>
+            <button type="button" onclick="quickWhatsAppOrder('${escapeHtml(p.id)}')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-black px-5 py-2.5 rounded-xl text-xs transition">احجز عبر واتساب</button>
+            <button type="button" onclick="navigateTo('product', '${escapeHtml(p.id)}')" class="bg-white/10 hover:bg-white/20 text-white font-bold px-4 py-2.5 rounded-xl text-xs transition">المواصفات الكاملة</button>
+          </div>
+        </div>
+      `;
+    }
+
     function renderWhiteFridayStrip() {
+      renderWfSpotlight();
       const grid = document.getElementById('whiteFridayCardsGrid');
       if (!grid) return;
       let wfItems = state.products.filter(p => p.category === 'عروض الجمعة البيضاء' || String(p.id || '').startsWith('KH-WF-'));
