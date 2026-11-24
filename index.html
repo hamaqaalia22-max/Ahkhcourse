@@ -414,7 +414,7 @@
           <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
           سعر الصرف المعتمد:
         </span>
-        <span id="topRateDisplay" class="font-bold bg-white/10 px-2.5 py-0.5 rounded-full">1$ = 15,000 ل.س</span>
+        <span id="topRateDisplay" class="font-bold bg-white/10 px-2.5 py-0.5 rounded-full">1$ = 15,300 ل.س</span>
         <button type="button" onclick="navigateTo('calculator')" class="underline text-gray-200 hover:text-white transition">تعديل / الحاسبة</button>
       </div>
       <div class="flex items-center gap-3 flex-wrap">
@@ -589,7 +589,7 @@
                 </div>
                 <div class="bg-gray-50 rounded-2xl p-3 border border-gray-100">
                   <div class="text-[11px] text-gray-500 font-bold">سعر الدولار</div>
-                  <div id="statExchangeRate" class="text-sm sm:text-base font-black text-gray-900 mt-1">15,000 ل.س</div>
+                  <div id="statExchangeRate" class="text-sm sm:text-base font-black text-gray-900 mt-1">15,300 ل.س</div>
                 </div>
               </div>
               <span id="statTotalProducts" class="hidden">0</span>
@@ -609,6 +609,55 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+
+      <!-- ==================== WHITE FRIDAY INTERACTIVE SHOWCASE ==================== -->
+      <div id="whiteFridayBanner" class="max-w-7xl mx-auto px-4 pt-6">
+        <div class="rounded-3xl bg-gradient-to-l from-gray-950 via-[#1d070c] to-[#8f021b] text-white p-5 sm:p-7 border border-red-500/30 shadow-xl relative overflow-hidden">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-5 relative z-10">
+            <div class="space-y-2 max-w-2xl">
+              <div class="inline-flex items-center gap-2 bg-red-600/90 text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide">
+                <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+                WHITE FRIDAY — عروض الجمعة البيضاء الحصرية
+              </div>
+              <h2 class="text-xl sm:text-3xl font-black leading-snug">
+                تخفيضات <span class="text-red-400">الجمعة البيضاء</span> على أقوى أجهزة اللابتوب والألعاب
+              </h2>
+              <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                أسعار حصرية مخفّضة مع إظهار السعر السابق والسعر الجديد بالدولار والليرة السورية، كفالة الوكالة الرسمية، وتوصيل لجميع المحافظات.
+              </p>
+            </div>
+
+            <!-- Interactive Live Countdown Timer -->
+            <div class="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+              <div class="grid grid-cols-4 gap-2 text-center bg-black/40 backdrop-blur border border-white/10 p-3 rounded-2xl" dir="ltr">
+                <div class="bg-white/10 px-2.5 py-1.5 rounded-xl min-w-[52px]">
+                  <div id="wfDays" class="text-base sm:text-lg font-black text-red-400">04</div>
+                  <div class="text-[10px] text-gray-300 font-bold">DAYS</div>
+                </div>
+                <div class="bg-white/10 px-2.5 py-1.5 rounded-xl min-w-[52px]">
+                  <div id="wfHours" class="text-base sm:text-lg font-black text-white">18</div>
+                  <div class="text-[10px] text-gray-300 font-bold">HRS</div>
+                </div>
+                <div class="bg-white/10 px-2.5 py-1.5 rounded-xl min-w-[52px]">
+                  <div id="wfMins" class="text-base sm:text-lg font-black text-white">42</div>
+                  <div class="text-[10px] text-gray-300 font-bold">MIN</div>
+                </div>
+                <div class="bg-white/10 px-2.5 py-1.5 rounded-xl min-w-[52px]">
+                  <div id="wfSecs" class="text-base sm:text-lg font-black text-red-400">15</div>
+                  <div class="text-[10px] text-gray-300 font-bold">SEC</div>
+                </div>
+              </div>
+              <button type="button" onclick="openCatalogCategory('عروض الجمعة البيضاء')" class="w-full sm:w-auto kh-gradient text-white font-black px-5 py-3.5 rounded-2xl shadow-lg hover:opacity-95 transition text-xs sm:text-sm whitespace-nowrap">
+                تصفح عروض الجمعة البيضاء
+              </button>
+            </div>
+          </div>
+
+          <!-- Interactive White Friday Cards Strip -->
+          <div id="whiteFridayCardsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6 pt-5 border-t border-white/10 relative z-10"></div>
         </div>
       </div>
 
@@ -806,7 +855,7 @@
             <div class="bg-red-50/70 border border-red-100 rounded-2xl p-4 space-y-3">
               <label for="globalRateInput" class="block text-sm font-extrabold text-red-900">سعر صرف 1 دولار أمريكي بالليرة السورية (ل.س)</label>
               <div class="flex gap-2">
-                <input id="globalRateInput" type="number" min="1" step="50" value="15000" class="flex-1 px-4 py-3 rounded-xl border border-red-200 bg-white font-black text-lg text-gray-900 focus:outline-none focus:border-red-600" />
+                <input id="globalRateInput" type="number" min="1" step="50" value="15300" class="flex-1 px-4 py-3 rounded-xl border border-red-200 bg-white font-black text-lg text-gray-900 focus:outline-none focus:border-red-600" />
                 <button type="button" onclick="saveGlobalRate()" class="kh-gradient text-white px-5 py-3 rounded-xl font-extrabold text-sm hover:opacity-95 transition">
                   اعتماد السعر
                 </button>
@@ -827,7 +876,7 @@
               </div>
               <div>
                 <label for="calcSypInput" class="block text-xs font-extrabold text-gray-700 mb-1.5">المبلغ بالليرة السورية (ل.س)</label>
-                <input id="calcSypInput" type="number" min="0" step="any" value="1500000" class="w-full px-4 py-3 rounded-xl border border-gray-300 font-black text-lg focus:outline-none focus:border-red-500" />
+                <input id="calcSypInput" type="number" min="0" step="any" value="1530000" class="w-full px-4 py-3 rounded-xl border border-gray-300 font-black text-lg focus:outline-none focus:border-red-500" />
               </div>
             </div>
 
@@ -850,7 +899,7 @@
               </div>
               <div class="text-left">
                 <div class="text-xs text-red-400 font-semibold">بالليرة السورية</div>
-                <div id="calcFinalSyp" class="text-2xl font-black text-red-400 mt-0.5">1,500,000 ل.س</div>
+                <div id="calcFinalSyp" class="text-2xl font-black text-red-400 mt-0.5">1,530,000 ل.س</div>
               </div>
             </div>
           </div>
@@ -1413,7 +1462,7 @@
             </div>
             <div>
               <label for="setExchangeRate" class="block text-xs font-extrabold text-gray-700 mb-1">سعر صرف الدولار (ل.س)</label>
-              <input id="setExchangeRate" type="number" min="1" value="15000" class="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm font-bold" />
+              <input id="setExchangeRate" type="number" min="1" value="15300" class="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-sm font-bold" />
             </div>
             <div>
               <label for="setPromoCode" class="block text-xs font-extrabold text-gray-700 mb-1">كود الخصم الفعّال (اختياري)</label>
@@ -2071,7 +2120,7 @@
       storeName: 'متجر KH Product',
       whatsappNumber: '963935175841',
       displayPhone: '0935175841',
-      exchangeRate: 15000,
+      exchangeRate: 15300,
       promoCode: 'KH10',
       promoPct: 10,
       markupPct: 0,
@@ -2093,7 +2142,3323 @@
 
     let state = {
       config: { ...DEFAULT_CONFIG },
-      products: [], // يبدأ فارغاً كما طلبت (الصور والمنتجات تضيفها أنت يدوياً أو عبر غوغل شيت)
+      products: [
+  {
+    "id": "KH-WF-01",
+    "name": "White Friday Deal — ASUS ROG Strix G18 G815 (RTX 5080 16GB)",
+    "brand": "ASUS",
+    "category": "عروض الجمعة البيضاء",
+    "priceUsd": 3149,
+    "oldPriceUsd": 3449,
+    "imageUrl": "https://dlcdnwebimgs.asus.com/files/media/d5444a20-d912-40e3-9a48-bbacc1e3a4e6/v1/images/Strix_G18_KV_1x1.webp",
+    "extraImages": [],
+    "features": [
+      "عرض الجمعة البيضاء الحصري (توفير $300)",
+      "المعالج: Intel Core Ultra 9 275HX (24 نواة حتى 5.4GHz)",
+      "كرت الشاشة: NVIDIA GeForce RTX 5080 16GB GDDR7",
+      "الرام: 32GB DDR5-5600 | التخزين: 2TB PCIe 4.0 NVMe SSD",
+      "الشاشة: 18 بوصة WQXGA 2.5K بتردد 240Hz"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "عرض الجمعة البيضاء - RTX 5080 16GB"
+    ],
+    "stock": "كمية محدودة",
+    "featured": true,
+    "description": "عرض الجمعة البيضاء الخاص على وحش الألعاب والمونتاج ASUS ROG Strix G18 بكرت RTX 5080 16GB وشاشة 18 بوصة 2.5K 240Hz."
+  },
+  {
+    "id": "KH-WF-02",
+    "name": "White Friday Deal — Lenovo Legion Pro 5 16IAX10H AI (RTX 5070 Ti 12GB)",
+    "brand": "Lenovo",
+    "category": "عروض الجمعة البيضاء",
+    "priceUsd": 2659,
+    "oldPriceUsd": 2759,
+    "imageUrl": "https://i5.walmartimages.com/seo/Lenovo-Legion-Pro-5-16IAX10H-83LU-Intel-Core-Ultra-9-275HX-5-4-GHz-Win-11-Home-GeForce-RTX-5070-Ti-32-GB-RAM-1-TB-SSD-NVMe-x-2-16-OLED-2560-x-1600-WQ_07f071a5-1a04-4667-98f1-868f1a56c719.7ea08e189295ec264c7f57f01667f355.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
+    "extraImages": [],
+    "features": [
+      "عرض الجمعة البيضاء الحصري (توفير $100)",
+      "المعالج: Intel Core Ultra 9 275HX AI",
+      "كرت الشاشة: NVIDIA GeForce RTX 5070 Ti 12GB GDDR7",
+      "الرام: 32GB DDR5-5600 | التخزين: 1TB NVMe SSD",
+      "الشاشة: 16 بوصة WQXGA 2.5K OLED بتردد 240Hz"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "عرض الجمعة البيضاء - 2.5K OLED 240Hz"
+    ],
+    "stock": "كمية محدودة",
+    "featured": true,
+    "description": "عرض الجمعة البيضاء على Lenovo Legion Pro 5 بشاشة OLED 2.5K 240Hz ومعالج Core Ultra 9 275HX وكرت RTX 5070 Ti."
+  },
+  {
+    "id": "KH-WF-03",
+    "name": "White Friday Deal — MSI Vector 16 HX A2XWHG AI (RTX 5070 Ti 12GB)",
+    "brand": "MSI",
+    "category": "عروض الجمعة البيضاء",
+    "priceUsd": 1949,
+    "oldPriceUsd": 2049,
+    "imageUrl": "https://es-store.msi.com/cdn/shop/files/portatil-gaming-msi-vector-16-hx-ai-a2xwhg-097xes.png?v=1741253504&width=640",
+    "extraImages": [],
+    "features": [
+      "عرض الجمعة البيضاء الحصري (توفير $100)",
+      "المعالج: Intel Core Ultra 7 255HX AI",
+      "كرت الشاشة: NVIDIA GeForce RTX 5070 Ti 12GB GDDR7",
+      "الرام: 16GB DDR5 | التخزين: 1TB NVMe SSD",
+      "الشاشة: 16 بوصة FHD+ IPS بتردد 144Hz ومنافذ Thunderbolt 5"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "عرض الجمعة البيضاء - RTX 5070 Ti"
+    ],
+    "stock": "كمية محدودة",
+    "featured": true,
+    "description": "عرض الجمعة البيضاء على MSI Vector 16 HX AI للألعاب والهندسة والذكاء الاصطناعي."
+  },
+  {
+    "id": "KH-WF-04",
+    "name": "White Friday Deal — Lenovo ThinkPad T14 Gen 6 (Core Ultra 7 255U / لمس)",
+    "brand": "Lenovo",
+    "category": "عروض الجمعة البيضاء",
+    "priceUsd": 1399,
+    "oldPriceUsd": 1479,
+    "imageUrl": "https://p1-ofp.static.pub/fes/cms/2025/04/08/mi5qm8tr8bx7flftut4lop021yuv1z747949.png?width=328&height=328",
+    "extraImages": [],
+    "features": [
+      "عرض الجمعة البيضاء الحصري (توفير $80)",
+      "المعالج: Intel Core Ultra 7 255U للأعمال والذكاء الاصطناعي",
+      "الرام: 16GB DDR5 | التخزين: 512GB NVMe Gen4 SSD",
+      "الشاشة: 14 بوصة WUXGA لمس | الوزن: 1.4 كغ"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "عرض الجمعة البيضاء - شاشة لمس"
+    ],
+    "stock": "كمية محدودة",
+    "featured": true,
+    "description": "عرض الجمعة البيضاء على Lenovo ThinkPad T14 Gen 6 المخصص للأعمال والبرمجة والذكاء الاصطناعي."
+  },
+  {
+    "id": "KH-WF-05",
+    "name": "White Friday Deal — HP OmniBook X Flip 16-AS0023DX (Core Ultra 7 256V / 2-in-1)",
+    "brand": "HP",
+    "category": "عروض الجمعة البيضاء",
+    "priceUsd": 949,
+    "oldPriceUsd": 999,
+    "imageUrl": "https://hp.widen.net/content/ulockcjchm/webp/ulockcjchm.png?w=573&h=430&dpi=72&color=ffffff00",
+    "extraImages": [],
+    "features": [
+      "عرض الجمعة البيضاء الحصري (توفير $50)",
+      "المعالج: Intel Core Ultra 7 256V + Intel Arc",
+      "الرام: 16GB LPDDR5x | التخزين: 1TB PCIe Gen4 SSD",
+      "الشاشة: 16 بوصة 2K لمس قابلة للدوران 360°"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "عرض الجمعة البيضاء - 2-in-1 1TB"
+    ],
+    "stock": "كمية محدودة",
+    "featured": true,
+    "description": "عرض الجمعة البيضاء على HP OmniBook X Flip 16 القابل للدوران 360 درجة بشاشة 2K لمس وهارد 1TB."
+  },
+  {
+    "id": "KH-WF-06",
+    "name": "White Friday Deal — Acer Aspire Go 15 AG15-42P-R917 (Ryzen 7 7730U / 16GB)",
+    "brand": "Acer",
+    "category": "عروض الجمعة البيضاء",
+    "priceUsd": 589,
+    "oldPriceUsd": 659,
+    "imageUrl": "https://c1.neweggimages.com/productimage/nb640/B32ZS260422156R8P84.jpg",
+    "extraImages": [],
+    "features": [
+      "عرض الجمعة البيضاء الحصري (توفير $70)",
+      "المعالج: AMD Ryzen 7 7730U (8 أنوية/16 مسار)",
+      "الرام: 16GB DDR4 | التخزين: 512GB NVMe SSD",
+      "الشاشة: 15.6 بوصة Full HD"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "عرض الجمعة البيضاء - Ryzen 7 / 16GB"
+    ],
+    "stock": "كمية محدودة",
+    "featured": true,
+    "description": "عرض الجمعة البيضاء على Acer Aspire Go 15 بمعالج Ryzen 7 7730U ورام 16GB وهارد 512GB SSD."
+  },
+  {
+    "id": "KH-LAP-01",
+    "name": "Lenovo IdeaPad Slim 3 15IAN8 (N100)",
+    "brand": "Lenovo",
+    "category": "لابتوبات جديدة",
+    "priceUsd": 315,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://p1-ofp.static.pub/medias/25470493404_82XQAG_202211110210051776909636269.png",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Processor N100 الجيل 12 (4 أنوية/4 مسارات حتى 3.4GHz)",
+      "الرام: 4GB DDR5 أصلي",
+      "التخزين: 128GB UFS أصلي",
+      "كرت الشاشة: Intel UHD Graphics 2GB",
+      "الشاشة: 15.6 بوصة FHD مضادة للانعكاس",
+      "البطارية: 4 إلى 8 ساعات",
+      "الملحقات: كيبورد مضيء، Wi-Fi 6، ويندوز 11 أصلي، اشتراك Office 365 سنة"
+    ],
+    "warranty": "سنة هاردوير + 3 سنين سوفتوير",
+    "warrantyDetails": "جديد مختوم بالكرتونة (غير معاد تصنيعه) مع توفر قطع تبديل أصلية",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "جديد مختوم بالكرتونة"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "لابتوب اقتصادي جديد مختوم بالكرتونة مثالي للدراسة والأعمال المكتبية مع ويندوز 11 أصلي وكيبورد مضيء."
+  },
+  {
+    "id": "KH-LAP-02",
+    "name": "HP 14-EP2011WM (وردي)",
+    "brand": "HP",
+    "category": "لابتوبات جديدة",
+    "priceUsd": 330,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://hp.widen.net/content/5a07fhlysy/webp/5a07fhlysy.png?w=573&h=430&dpi=72&color=ffffff00",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Celeron N150 الجيل 14 (4 أنوية/4 مسارات حتى 3.6GHz)",
+      "الرام: 4GB قابل للتطوير",
+      "التخزين: 128GB SSD قابل للتطوير",
+      "كرت الشاشة: Intel UHD Graphics مدمج",
+      "الشاشة: 14 بوصة FHD",
+      "البطارية: 3 إلى 5 ساعات",
+      "الملحقات: شاحن أصلي، ويندوز أصلي، WebCam وUSB3 وHDMI"
+    ],
+    "warranty": "سنة هاردوير + 3 سنين سوفتوير",
+    "warrantyDetails": "جديد مختوم بالكرتونة (غير معاد تصنيعه)",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "اللون الوردي - جديد مختوم"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "لابتوب HP أنيق باللون الوردي وخفيف الوزن بمقاس 14 بوصة للدراسة والتصفح اليومي."
+  },
+  {
+    "id": "KH-LAP-03",
+    "name": "HP 15-fc0198nia",
+    "brand": "HP",
+    "category": "لابتوبات جديدة",
+    "priceUsd": 410,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://hp.widen.net/content/5a07fhlysy/webp/5a07fhlysy.png?w=573&h=430&dpi=72&color=ffffff00",
+    "extraImages": [],
+    "features": [
+      "المعالج: AMD Athlon Silver 7120U (نواتان/مساران حتى 3.5GHz)",
+      "الرام: 8GB DDR5 أصلي",
+      "التخزين: 256GB SSD NVMe أصلي",
+      "كرت الشاشة: AMD Radeon 610M مدمج",
+      "الشاشة: 15.6 بوصة FHD",
+      "البطارية: 3 إلى 5 ساعات",
+      "الملحقات: كيبورد مضيء، منفذ Type-C وUSB3 وHDMI، الشاحن الأصلي"
+    ],
+    "warranty": "سنة هاردوير + 3 سنين سوفتوير",
+    "warrantyDetails": "جديد مختوم بالكرتونة (غير معاد تصنيعه)",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "جديد مختوم بالكرتونة"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "لابتوب HP عملي بذاكرة DDR5 سريعة سعة 8GB وهارد NVMe 256GB وكيبورد مضيء."
+  },
+  {
+    "id": "KH-LAP-04",
+    "name": "Lenovo IdeaPad Slim 3 15IAN8 (Core i3-N305)",
+    "brand": "Lenovo",
+    "category": "لابتوبات جديدة",
+    "priceUsd": 420,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://p1-ofp.static.pub/medias/25470493404_82XQAG_202211110210051776909636269.png",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core i3-N305 الجيل 13 (8 أنوية/8 مسارات حتى 3.8GHz)",
+      "الرام: 8GB أصلي",
+      "التخزين: 128GB SSD أصلي",
+      "كرت الشاشة: Intel UHD Graphics مدمج",
+      "الشاشة: 15.6 بوصة FHD",
+      "البطارية: 3 إلى 5 ساعات",
+      "الملحقات: ويندوز 11 أصلي، WebCam وUSB3 وHDMI، الشاحن الأصلي"
+    ],
+    "warranty": "سنة هاردوير + 3 سنين سوفتوير",
+    "warrantyDetails": "جديد مختوم بالكرتونة (غير معاد تصنيعه)",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "جديد مختوم بالكرتونة"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "نسخة قوية من IdeaPad Slim 3 بمعالج ثماني النواة Core i3-N305 ورام 8GB مع ويندوز 11 أصلي."
+  },
+  {
+    "id": "KH-LAP-05",
+    "name": "Lenovo V15 G4 (83A1)",
+    "brand": "Lenovo",
+    "category": "لابتوبات جديدة",
+    "priceUsd": 460,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://psrefstuff.lenovo.com/syspool/Sys/Image/Lenovo/Lenovo_V15_G4_AMN/Compressedimage/Lenovo_V15_G4_AMN_CT1_01.png",
+    "extraImages": [],
+    "features": [
+      "المعالج: AMD Athlon Silver 7120U (حتى 3.5GHz)",
+      "الرام: 8GB LPDDR5 أصلي",
+      "التخزين: 512GB SSD M.2 NVMe أصلي",
+      "كرت الشاشة: AMD Radeon 610M أساسي 512MB",
+      "الشاشة: 15.6 بوصة Full HD",
+      "البطارية: 2 إلى 3 ساعات",
+      "الملحقات: WebCam وUSB3 وHDMI والشاحن الأصلي"
+    ],
+    "warranty": "سنة هاردوير + 3 سنين سوفتوير",
+    "warrantyDetails": "جديد مختوم بالكرتونة (غير معاد تصنيعه)",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "جديد مختوم بالكرتونة"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "لابتوب أعمال متين من سلسلة Lenovo V15 بمساحة تخزين كبيرة 512GB NVMe ورام LPDDR5."
+  },
+  {
+    "id": "KH-LAP-06",
+    "name": "DELL Pro 15 Essential (Core 3-100U)",
+    "brand": "Dell",
+    "category": "لابتوبات جديدة",
+    "priceUsd": 485,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/dell-pro/pv15250/media-gallery/notebook-pv15250-nt-laptop-bk-plastic-gallery-3.png?fmt=jpg&wid=4582&hei=2686",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core 3-100U الجيل 14 (6 أنوية/8 مسارات حتى 4.7GHz)",
+      "الرام: 8GB قابل للتطوير",
+      "التخزين: 512GB SSD قابل للتطوير حتى 1TB",
+      "كرت الشاشة: Intel UHD Graphics مدمج",
+      "الشاشة: 15.6 بوصة FHD",
+      "البطارية: 3 إلى 5 ساعات",
+      "الملحقات: WebCam وUSB3 وHDMI والشاحن الأصلي"
+    ],
+    "warranty": "سنة هاردوير + 3 سنين سوفتوير",
+    "warrantyDetails": "جديد مختوم بالكرتونة (غير معاد تصنيعه)",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "جديد مختوم بالكرتونة"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "لابتوب Dell من الجيل الرابع عشر بمعالج Core 3-100U وسعة تخزين 512GB SSD مع قابلية التطوير."
+  },
+  {
+    "id": "KH-LAP-07",
+    "name": "HP Laptop 15-fd0362nia",
+    "brand": "HP",
+    "category": "لابتوبات جديدة",
+    "priceUsd": 490,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://hp.widen.net/content/5a07fhlysy/webp/5a07fhlysy.png?w=573&h=430&dpi=72&color=ffffff00",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core i3-1315U الجيل 13 (6 أنوية/8 مسارات حتى 4.5GHz)",
+      "الرام: 8GB قابل للتطوير",
+      "التخزين: 512GB SSD قابل للتطوير",
+      "كرت الشاشة: Intel UHD Graphics مدمج",
+      "الشاشة: 15.6 بوصة FHD",
+      "البطارية: 3 إلى 5 ساعات",
+      "الملحقات: WebCam وUSB3 وHDMI والشاحن الأصلي"
+    ],
+    "warranty": "سنة هاردوير + 3 سنين سوفتوير",
+    "warrantyDetails": "جديد مختوم بالكرتونة (غير معاد تصنيعه)",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "جديد مختوم بالكرتونة"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "لابتوب HP متوازن بمعالج Intel Core i3 الجيل الثالث عشر وهارد 512GB SSD سريع."
+  },
+  {
+    "id": "KH-LAP-08",
+    "name": "ASUS Vivobook Go 15 E1504GA",
+    "brand": "ASUS",
+    "category": "لابتوبات جديدة",
+    "priceUsd": 490,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://id.store.asus.com/media/catalog/product/v/i/vivobook_go_15_e1504f_e1504g_product_photo_1s_cool_silver_05_fingerprint_backlit.png?store=id_ID&image-type=image",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core i3-N305 الجيل 13 (8 أنوية/8 مسارات حتى 3.8GHz)",
+      "الرام: 8GB أصلي",
+      "التخزين: 256GB SSD قابل للتطوير حتى 1TB",
+      "كرت الشاشة: Intel UHD Graphics مدمج",
+      "الشاشة: 15.6 بوصة FHD",
+      "البطارية: 3 إلى 5 ساعات",
+      "الملحقات: ويندوز أصلي، WebCam وUSB3 وHDMI والشاحن الأصلي"
+    ],
+    "warranty": "سنة هاردوير + 3 سنين سوفتوير",
+    "warrantyDetails": "جديد مختوم بالكرتونة (غير معاد تصنيعه)",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "جديد مختوم بالكرتونة"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "لابتوب ASUS Vivobook Go 15 خفيف وأنيق بمعالج Core i3-N305 ثماني النواة وويندوز أصلي."
+  },
+  {
+    "id": "KH-LAP-09",
+    "name": "Lenovo IdeaPad Slim 3 15AMN8",
+    "brand": "Lenovo",
+    "category": "لابتوبات جديدة",
+    "priceUsd": 530,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://p1-ofp.static.pub/medias/25470493404_82XQAG_202211110210051776909636269.png",
+    "extraImages": [],
+    "features": [
+      "المعالج: AMD Ryzen 5 (4 أنوية/8 مسارات حتى 4.3GHz)",
+      "الرام: 8GB قابل للتطوير",
+      "التخزين: 256GB SSD قابل للتطوير",
+      "كرت الشاشة: AMD Radeon 610M أساسي 512MB",
+      "الشاشة: 15.6 بوصة FHD",
+      "البطارية: 3 إلى 5 ساعات",
+      "الملحقات: ويندوز 11 أصلي، WebCam وUSB3 وHDMI والشاحن الأصلي"
+    ],
+    "warranty": "سنة هاردوير + 3 سنين سوفتوير",
+    "warrantyDetails": "جديد مختوم بالكرتونة (غير معاد تصنيعه)",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "جديد مختوم بالكرتونة"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "أداء ممتاز من لينوفو بمعالج AMD Ryzen 5 وويندوز 11 أصلي للعمل والدراسة الجامعية."
+  },
+  {
+    "id": "KH-LAP-10",
+    "name": "ASUS Vivobook Go 15 E1504F",
+    "brand": "ASUS",
+    "category": "لابتوبات جديدة",
+    "priceUsd": 535,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://id.store.asus.com/media/catalog/product/v/i/vivobook_go_15_e1504f_e1504g_product_photo_1s_cool_silver_05_fingerprint_backlit.png?store=id_ID&image-type=image",
+    "extraImages": [],
+    "features": [
+      "المعالج: AMD Ryzen 5-7520U (4 أنوية/8 مسارات حتى 4.3GHz)",
+      "الرام: 8GB DDR5 أصلي",
+      "التخزين: 512GB SSD أصلي",
+      "كرت الشاشة: AMD Radeon Graphics مدمج",
+      "الشاشة: 15.6 بوصة FHD",
+      "البطارية: 3 إلى 5 ساعات",
+      "الملحقات: ويندوز أصلي، WebCam وUSB3 وHDMI والشاحن الأصلي"
+    ],
+    "warranty": "سنة هاردوير + 3 سنين سوفتوير",
+    "warrantyDetails": "جديد مختوم بالكرتونة (غير معاد تصنيعه)",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "جديد مختوم بالكرتونة"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "لابتوب ASUS Vivobook Go 15 بمعالج Ryzen 5-7520U ورام 8GB DDR5 وهارد 512GB SSD."
+  },
+  {
+    "id": "KH-LAP-11",
+    "name": "HP OmniBook 3 16-by0015dx",
+    "brand": "HP",
+    "category": "لابتوبات جديدة",
+    "priceUsd": 555,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://hp.widen.net/content/rrkegya2gt/webp/rrkegya2gt.png?w=573&h=430&dpi=72&color=ffffff00",
+    "extraImages": [],
+    "features": [
+      "المعالج: AMD Ryzen 5 الجيل 7 (4 أنوية/8 مسارات حتى 4.3GHz)",
+      "الرام: 8GB أصلي",
+      "التخزين: 256GB SSD أصلي",
+      "كرت الشاشة: AMD Radeon 610M مدمج",
+      "الشاشة: 16.0 بوصة 2K IPS تدعم اللمس",
+      "البطارية: 3 إلى 5 ساعات",
+      "الملحقات: كاميرا 1080p FHD، ويندوز أصلي، USB3 وHDMI والشاحن الأصلي"
+    ],
+    "warranty": "سنة هاردوير + 3 سنين سوفتوير",
+    "warrantyDetails": "جديد مختوم بالكرتونة (غير معاد تصنيعه)",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "شاشة 2K لمس - جديد مختوم"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "شاشة عملاقة 16 بوصة بدقة 2K IPS تدعم اللمس مع كاميرا FHD ومعالج Ryzen 5."
+  },
+  {
+    "id": "KH-LAP-12",
+    "name": "DELL Pro 15 Essential (PV15250)",
+    "brand": "Dell",
+    "category": "لابتوبات جديدة",
+    "priceUsd": 560,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/dell-pro/pv15250/media-gallery/notebook-pv15250-nt-laptop-bk-plastic-gallery-3.png?fmt=jpg&wid=4582&hei=2686",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core i5-1334U الجيل 13 (10 أنوية/12 مسار حتى 4.6GHz)",
+      "الرام: 8GB DDR5 أصلي",
+      "التخزين: 512GB SSD أصلي",
+      "كرت الشاشة: Intel Iris Xe مدمج",
+      "الشاشة: 15.6 بوصة FHD بتردد 120Hz",
+      "البطارية: 3 إلى 5 ساعات",
+      "الملحقات: بصمة إصبع Fingerprint، مدخل شبكة LAN، WebCam وUSB3 وHDMI"
+    ],
+    "warranty": "سنة هاردوير + 3 سنين سوفتوير",
+    "warrantyDetails": "جديد مختوم بالكرتونة (غير معاد تصنيعه)",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "شاشة 120Hz مع بصمة - جديد مختوم"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "لابتوب Dell احترافي بمعالج Core i5-1334U وشاشة سلسة 120Hz وبصمة إصبع ومدخل شبكة."
+  },
+  {
+    "id": "KH-LAP-13",
+    "name": "Lenovo IdeaPad Slim 3 15IRH8",
+    "brand": "Lenovo",
+    "category": "لابتوبات جديدة",
+    "priceUsd": 575,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://p1-ofp.static.pub/medias/25470493404_82XQAG_202211110210051776909636269.png",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core i5-13420H الجيل 13 (8 أنوية/12 مسار حتى 4.6GHz)",
+      "الرام: 8GB DDR4",
+      "التخزين: 512GB SSD قابل للتطوير",
+      "كرت الشاشة: Intel Graphics مدمج",
+      "الشاشة: 15.6 بوصة FHD",
+      "البطارية: 3 إلى 5 ساعات",
+      "الملحقات: WebCam وUSB3 وHDMI والشاحن الأصلي"
+    ],
+    "warranty": "سنة هاردوير + 3 سنين سوفتوير",
+    "warrantyDetails": "جديد مختوم بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "معالج فئة H للأداء العالي"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "أداء قوي للبرمجة والعمل المكثف بفضل معالج Intel Core i5-13420H من فئة الأداء العالي."
+  },
+  {
+    "id": "KH-LAP-14",
+    "name": "ASUS Vivobook 15 X1504 (Core 5-120U)",
+    "brand": "ASUS",
+    "category": "لابتوبات جديدة",
+    "priceUsd": 585,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://uk.store.asus.com/media/catalog/product/X/1/X1504ZA-NJ192W-Main.jpg?width=1000&height=450&store=en_UK&image-type=image",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core 5-120U الجيل 14 (10 أنوية/12 مسار حتى 5.0GHz)",
+      "الرام: 8GB DDR5 أصلي",
+      "التخزين: 512GB PCIe Gen4 SSD أصلي",
+      "كرت الشاشة: Intel UHD Graphics مدمج",
+      "الشاشة: 15.6 بوصة FHD 60Hz",
+      "البطارية: 3 إلى 5 ساعات",
+      "الملحقات: WebCam وUSB3 وHDMI والشاحن الأصلي"
+    ],
+    "warranty": "سنة هاردوير + 3 سنين سوفتوير",
+    "warrantyDetails": "جديد مختوم بالكرتونة (غير معاد تصنيعه)",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "جديد مختوم بالكرتونة"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "لابتوب ASUS Vivobook 15 حديث بمعالج Intel Core 5-120U الجيل 14 ورام DDR5 وهارد PCIe Gen4."
+  },
+  {
+    "id": "KH-LAP-15",
+    "name": "DELL LDC15250 (شاشة لمس)",
+    "brand": "Dell",
+    "category": "لابتوبات جديدة",
+    "priceUsd": 595,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/dell-pro/pv15250/media-gallery/notebook-pv15250-nt-laptop-bk-plastic-gallery-3.png?fmt=jpg&wid=4582&hei=2686",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core 5-1334U الجيل 13 (10 أنوية/12 مسار)",
+      "الرام: 8GB DDR5 قابل للتطوير",
+      "التخزين: 512GB SSD قابل للتطوير",
+      "كرت الشاشة: Intel UHD Graphics مدمج",
+      "الشاشة: 15.6 بوصة FHD تدعم اللمس",
+      "البطارية: 2.5 إلى 5 ساعات",
+      "الملحقات: Windows 11 Home أصلي، WebCam وUSB3 وHDMI"
+    ],
+    "warranty": "سنة هاردوير + 3 سنين سوفتوير",
+    "warrantyDetails": "جديد مختوم بالكرتونة (غير معاد تصنيعه)",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "شاشة لمس - Windows 11 Home"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "لابتوب Dell بشاشة لمس FHD وذاكرة DDR5 قابلة للتطوير مع نظام Windows 11 Home أصلي."
+  },
+  {
+    "id": "KH-LAP-16",
+    "name": "Lenovo IdeaPad 1i (RAM 16GB)",
+    "brand": "Lenovo",
+    "category": "لابتوبات جديدة",
+    "priceUsd": 595,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://p1-ofp.static.pub/ShareResource/na/subseries/hero/lenovo-ideapad-1i-gen-7-15-inch-abyss-blue.png?width=328&height=328",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core i5-1335U الجيل 13 (10 أنوية/12 مسار حتى 4.6GHz)",
+      "الرام: 16GB أصلي",
+      "التخزين: 256GB SSD قابل للتطوير حتى 1TB",
+      "كرت الشاشة: Intel Graphics مدمج",
+      "الشاشة: 15.6 بوصة FHD",
+      "البطارية: 3 إلى 5 ساعات",
+      "الملحقات: WebCam وUSB3 وHDMI والشاحن الأصلي"
+    ],
+    "warranty": "سنة هاردوير + 3 سنين سوفتوير",
+    "warrantyDetails": "جديد مختوم بالكرتونة (غير معاد تصنيعه)",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "رام 16GB - جديد مختوم"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "ميزة الرام 16GB الجاهزة لتعدد المهام السلس مع معالج Core i5 الجيل الثالث عشر."
+  },
+  {
+    "id": "KH-LAP-17",
+    "name": "ASUS Vivobook 15 X1504ZA-NJ247 (Core i7)",
+    "brand": "ASUS",
+    "category": "لابتوبات جديدة",
+    "priceUsd": 599,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://uk.store.asus.com/media/catalog/product/X/1/X1504ZA-NJ192W-Main.jpg?width=1000&height=450&store=en_UK&image-type=image",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core i7-1255U الجيل 12 (10 أنوية/12 مسار حتى 4.7GHz)",
+      "الرام: 8GB DDR4 أصلي",
+      "التخزين: 512GB SSD NVMe أصلي",
+      "كرت الشاشة: Intel UHD Graphics مدمج",
+      "الشاشة: 15.6 بوصة FHD",
+      "البطارية: 2.5 إلى 5 ساعات",
+      "الملحقات: كيبورد عربي أصلي، Type-C وUSB3 وHDMI والشاحن الأصلي"
+    ],
+    "warranty": "سنة هاردوير + 3 سنين سوفتوير",
+    "warrantyDetails": "جديد مختوم بالكرتونة (غير معاد تصنيعه)",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "معالج Core i7 مع كيبورد عربي"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "لابتوب ASUS Vivobook 15 بمعالج Intel Core i7-1255U وكيبورد عربي أصلي وهارد 512GB NVMe."
+  },
+  {
+    "id": "KH-LAP-18",
+    "name": "HP 15-fd2050wm (Core Ultra 5 - شاشة لمس)",
+    "brand": "HP",
+    "category": "لابتوبات جديدة",
+    "priceUsd": 615,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://hp.widen.net/content/5a07fhlysy/webp/5a07fhlysy.png?w=573&h=430&dpi=72&color=ffffff00",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core Ultra 5 225U الجيل 15 (12 نواة/14 مسار حتى 4.8GHz)",
+      "الرام: 8GB قابل للتطوير",
+      "التخزين: 512GB SSD قابل للتطوير",
+      "كرت الشاشة: Intel UHD Graphics مدمج",
+      "الشاشة: 15.6 بوصة FHD تدعم اللمس",
+      "البطارية: 3 إلى 5 ساعات",
+      "الملحقات: ويندوز أصلي، WebCam وUSB3 وHDMI والشاحن الأصلي"
+    ],
+    "warranty": "سنة هاردوير + 3 سنين سوفتوير",
+    "warrantyDetails": "جديد مختوم بالكرتونة (غير معاد تصنيعه)",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "معالج الجيل 15 - شاشة لمس"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "أحدث جيل من معالجات Intel Core Ultra 5 225U بـ 12 نواة مع شاشة لمس FHD وويندوز أصلي."
+  },
+  {
+    "id": "KH-LAP-19",
+    "name": "ASUS Vivobook 15 X1504VA-BQ4852 (Core 7-150U)",
+    "brand": "ASUS",
+    "category": "لابتوبات جديدة",
+    "priceUsd": 615,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://uk.store.asus.com/media/catalog/product/X/1/X1504ZA-NJ192W-Main.jpg?width=1000&height=450&store=en_UK&image-type=image",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core 7-150U الجيل 14 (10 أنوية/12 مسار حتى 5.4GHz)",
+      "الرام: 8GB أصلي",
+      "التخزين: 512GB SSD PCIe 4.0 أصلي",
+      "كرت الشاشة: Intel Iris Xe Graphics مدمج",
+      "الشاشة: 15.6 بوصة FHD",
+      "البطارية: 3 إلى 5 ساعات",
+      "الملحقات: WebCam وUSB3 وHDMI والشاحن الأصلي"
+    ],
+    "warranty": "سنة هاردوير + 3 سنين سوفتوير",
+    "warrantyDetails": "جديد مختوم بالكرتونة (غير معاد تصنيعه)",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "معالج Core 7 بتردد حتى 5.4GHz"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "قوة معالجة فائقة من الجيل الرابع عشر Intel Core 7-150U مع كرت Iris Xe وهارد PCIe 4.0."
+  },
+  {
+    "id": "KH-LAP-20",
+    "name": "DELL Vostro 3530 (Core i7)",
+    "brand": "Dell",
+    "category": "لابتوبات جديدة",
+    "priceUsd": 635,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/dell-pro/pv15250/media-gallery/notebook-pv15250-nt-laptop-bk-plastic-gallery-3.png?fmt=jpg&wid=4582&hei=2686",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core i7 الجيل 13 (10 أنوية/12 مسار حتى 5.0GHz)",
+      "الرام: 8GB أصلي",
+      "التخزين: 512GB SSD أصلي",
+      "كرت الشاشة: Intel Iris Xe مدمج",
+      "الشاشة: 15.6 بوصة FHD",
+      "البطارية: 3 إلى 5 ساعات",
+      "الملحقات: مدخل شبكة LAN، WebCam وUSB3 وHDMI والشاحن الأصلي"
+    ],
+    "warranty": "سنة هاردوير + 3 سنين سوفتوير",
+    "warrantyDetails": "جديد مختوم بالكرتونة (غير معاد تصنيعه)",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "جديد مختوم بالكرتونة"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "لابتوب Dell Vostro 3530 الاحترافي بمعالج Core i7 الجيل الثالث عشر ومدخل شبكة LAN للأعمال."
+  },
+  {
+    "id": "KH-PS-01",
+    "name": "PlayStation 4 Slim 500GB (قبضة أصلية - غير قابل للتعديل) مستعمل",
+    "brand": "Sony",
+    "category": "أجهزة بلايستيشن",
+    "priceUsd": 180,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://gmedia.playstation.com/is/image/SIEPDC/ps4-product-thumbnail-01-en-14sep21?$facebook$",
+    "extraImages": [],
+    "features": [
+      "السعة التخزينية: 500GB",
+      "الحالة: مستعمل بحالة ممتازة (غير قابل للتعديل)",
+      "الملحقات: قبضة تحكم أصلية (DualShock 4) + كابلات التوصيل",
+      "يدعم تشغيل ألعاب PS4 الأصلية والأونلاين"
+    ],
+    "warranty": "3 أشهر هاردوير + سنة سوفتوير",
+    "warrantyDetails": "مفحوص ومضمون بالكامل مع توفر صيانة وقطع تبديل أصلية",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "مستعمل - قبضة واحدة أصلية"
+    ],
+    "stock": "طلب مسبق",
+    "featured": false,
+    "description": "جهاز PlayStation 4 Slim سعة 500GB مستعمل بحالة ممتازة مع قبضة أصلية (متاح للحجز والطلب المسبق)."
+  },
+  {
+    "id": "KH-PS-02",
+    "name": "PlayStation 4 Slim 500GB (قبضتين أصلية - معدّل) مستعمل",
+    "brand": "Sony",
+    "category": "أجهزة بلايستيشن",
+    "priceUsd": 235,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://gmedia.playstation.com/is/image/SIEPDC/ps4-product-thumbnail-01-en-14sep21?$facebook$",
+    "extraImages": [],
+    "features": [
+      "السعة التخزينية: 500GB",
+      "الحالة: مستعمل بحالة ممتازة (معدّل جاهز لتحميل الألعاب)",
+      "الملحقات: قبضتا تحكم أصليتان (DualShock 4) + كابلات التوصيل",
+      "تصميم نحيف وهادئ مناسب للألعاب العائلية"
+    ],
+    "warranty": "3 أشهر هاردوير + سنة سوفتوير",
+    "warrantyDetails": "مفحوص ومضمون بالكامل مع توفر صيانة وقطع تبديل أصلية",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "مستعمل معدّل - قبضتين أصلية"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "جهاز PlayStation 4 Slim 500GB معدّل وجاهز مع قبضتين أصليتين للعب الثنائي الفوري."
+  },
+  {
+    "id": "KH-PS-03",
+    "name": "PlayStation 4 Slim 1TB (قبضتين أصلية - معدّل) مستعمل",
+    "brand": "Sony",
+    "category": "أجهزة بلايستيشن",
+    "priceUsd": 265,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://gmedia.playstation.com/is/image/SIEPDC/ps4-product-thumbnail-01-en-14sep21?$facebook$",
+    "extraImages": [],
+    "features": [
+      "السعة التخزينية: 1TB (تيرابايت كامل لعدد كبير من الألعاب)",
+      "الحالة: مستعمل بحالة ممتازة (معدّل)",
+      "الملحقات: قبضتا تحكم أصليتان (DualShock 4) + كابلات التوصيل",
+      "أداء مستقر ومناسب للاستخدام المكثف"
+    ],
+    "warranty": "3 أشهر هاردوير + سنة سوفتوير",
+    "warrantyDetails": "مفحوص ومضمون بالكامل مع توفر صيانة وقطع تبديل أصلية",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "مستعمل معدّل 1TB - قبضتين أصلية"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "جهاز PlayStation 4 Slim بسعة كبيرة 1TB معدّل ومعه قبضتان أصليتان لتخزين عشرات الألعاب."
+  },
+  {
+    "id": "KH-PS-04",
+    "name": "PlayStation 5 Digital Original (قبضة واحدة - Repackaged from Sony)",
+    "brand": "Sony",
+    "category": "أجهزة بلايستيشن",
+    "priceUsd": 720,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://gmedia.playstation.com/is/image/SIEPDC/ps5-buy-now-product-thumbnail-01-en-18mar22?$facebook$",
+    "extraImages": [],
+    "features": [
+      "الطراز: PlayStation 5 Digital Edition (إصدار رقمي بدون قارئ أقراص - معاد التغليف رسمياً من سوني)",
+      "المعالج: AMD Zen 2 ثماني النواة",
+      "الرسوميات: AMD RDNA 2 مع دعم 4K حتى 120fps وتقنية Ray Tracing",
+      "الذاكرة: 16GB GDDR6",
+      "التخزين: SSD فائق السرعة",
+      "الذراع: قبضة DualSense لاسلكية أصلية بمحفّزات لمسية",
+      "الصوت: Tempest 3D Audio"
+    ],
+    "warranty": "جديد كفالة لمدة سنة",
+    "warrantyDetails": "أصلي معاد التغليف رسمياً من Sony بكفالة سنة كاملة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "النسخة الرقمية - قبضة واحدة"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "جهاز PlayStation 5 Digital الأصلي معاد التغليف رسمياً من سوني مع قبضة DualSense وكفالة سنة."
+  },
+  {
+    "id": "KH-PS-05",
+    "name": "PlayStation 5 Slim – الإصدار القياسي (Standard Edition)",
+    "brand": "Sony",
+    "category": "أجهزة بلايستيشن",
+    "priceUsd": 775,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://gmedia.playstation.com/is/image/SIEPDC/ps5-buy-now-product-thumbnail-01-en-18mar22?$facebook$",
+    "extraImages": [],
+    "features": [
+      "الطراز: PS5 Slim الإصدار القياسي (مع مشغل أقراص Ultra HD Blu-ray مدمج)",
+      "المعالج: AMD Zen 2 ثماني النواة",
+      "الرسوميات: AMD RDNA 2 حتى 10.28 TFLOPs",
+      "الذاكرة: 16GB GDDR6",
+      "التخزين: SSD داخلي 1TB فائق السرعة",
+      "الدقة: 4K بمعدل 120fps + Ray Tracing",
+      "الذراع: DualSense لاسلكي أصلي",
+      "التوافق العكسي: يشغّل ألعاب PS5 وPS4",
+      "الشبكة: Wi-Fi 6 وبلوتوث وHDMI 2.1"
+    ],
+    "warranty": "جديد كفالة لمدة سنة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بكفالة سنة كاملة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "إصدار قياسي مع مشغل أقراص 1TB"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "جهاز PlayStation 5 Slim الإصدار القياسي الجديد بسعة 1TB ومشغل أقراص مدمج مع كفالة سنة."
+  },
+  {
+    "id": "KH-PS-06",
+    "name": "PlayStation 5 – إصدار Ghost of Yōtei المحدود (أسود / Black)",
+    "brand": "Sony",
+    "category": "أجهزة بلايستيشن",
+    "priceUsd": 825,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://gmedia.playstation.com/is/image/SIEPDC/ps5-buy-now-product-thumbnail-01-en-18mar22?$facebook$",
+    "extraImages": [],
+    "features": [
+      "الطراز: إصدار محدود خاص Ghost of Yōtei باللون الأسود (تصميم فني حصري)",
+      "يشمل: جهاز PS5 Slim بإصدار محدود + قبضة DualSense مطابقة للإصدار المحدود",
+      "التخزين: SSD داخلي 1TB فائق السرعة",
+      "الدقة: 4K حتى 120fps مع دعم Ray Tracing",
+      "الصوت: Tempest 3D Audio ثلاثي الأبعاد",
+      "الشبكة: Wi-Fi 6 وHDMI 2.1"
+    ],
+    "warranty": "جديد كفالة لمدة سنة",
+    "warrantyDetails": "جديد مختوم بالكرتونة - إصدار محدود حصري بكفالة سنة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "إصدار محدود - اللون الأسود (Black)"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "إصدار محدود وحصري لهواة التميز من PlayStation 5 بتصميم Ghost of Yōtei الأسود مع ذراع DualSense مطابق."
+  },
+  {
+    "id": "KH-PS-07",
+    "name": "PlayStation 5 – إصدار Ghost of Yōtei المحدود (ذهبي / Gold)",
+    "brand": "Sony",
+    "category": "أجهزة بلايستيشن",
+    "priceUsd": 825,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://gmedia.playstation.com/is/image/SIEPDC/ps5-buy-now-product-thumbnail-01-en-18mar22?$facebook$",
+    "extraImages": [],
+    "features": [
+      "الطراز: إصدار محدود خاص Ghost of Yōtei باللون الذهبي (تصميم Kintsugi الفاخر)",
+      "يشمل: جهاز PS5 Slim بإصدار محدود + قبضة DualSense ذهبية مطابقة",
+      "التخزين: SSD داخلي 1TB فائق السرعة",
+      "الدقة: 4K حتى 120fps مع دعم Ray Tracing",
+      "الصوت: Tempest 3D Audio ثلاثي الأبعاد",
+      "الشبكة: Wi-Fi 6 وHDMI 2.1"
+    ],
+    "warranty": "جديد كفالة لمدة سنة",
+    "warrantyDetails": "جديد مختوم بالكرتونة - إصدار محدود حصري بكفالة سنة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "إصدار محدود - اللون الذهبي (Gold)"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "إصدار محدود فاخر من PlayStation 5 بتصميم Ghost of Yōtei الذهبي مع ذراع DualSense مطابق."
+  },
+  {
+    "id": "KH-PS-08",
+    "name": "PlayStation 5 – إصدار الذكرى الثلاثين المحدود (30th Anniversary Limited Edition)",
+    "brand": "Sony",
+    "category": "أجهزة بلايستيشن",
+    "priceUsd": 975,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://gmedia.playstation.com/is/image/SIEPDC/ps5-buy-now-product-thumbnail-01-en-18mar22?$facebook$",
+    "extraImages": [],
+    "features": [
+      "الطراز: PlayStation 5 30th Anniversary Limited Edition (إصدار الذكرى الثلاثين الكلاسيكي النادر)",
+      "تصميم رمادي كلاسيكي مستوحى من بلايستيشن 1 الأصلي مع قبضة DualSense مطابقة للإصدار",
+      "التخزين: SSD داخلي 1TB فائق السرعة",
+      "الدقة: 4K حتى 120fps مع دعم Ray Tracing",
+      "الصوت: Tempest 3D Audio",
+      "الشبكة: Wi-Fi 6 وبلوتوث وHDMI 2.1"
+    ],
+    "warranty": "جديد كفالة لمدة سنة",
+    "warrantyDetails": "جديد مختوم بالكرتونة - إصدار نادر لهواة الجمع بكفالة سنة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "إصدار الذكرى الثلاثين المحدود"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "الإصدار الأندر من سوني بمناسبة الذكرى الثلاثين لبلايستيشن بالتصميم الرمادي الكلاسيكي الفاخر."
+  },
+  {
+    "id": "KH-FUR-01",
+    "name": "Comfy Office Chair",
+    "brand": "Generic",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 75,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://fantechworld.com/cdn/shop/files/Product_Image_OC1_black.png?v=1761381797",
+    "extraImages": [],
+    "features": [
+      "تصميم مكتبي مريح للاستخدام اليومي",
+      "مسند ظهر داعم للعمود الفقري",
+      "قاعدة خماسية بعجلات انسيابية",
+      "تعديل الارتفاع"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "جديد بالكرتونة"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "كرسي مكتبي اقتصادي ومريح مناسب للدراسة والعمل اليومي في المنزل والمكتب."
+  },
+  {
+    "id": "KH-FUR-02",
+    "name": "طاولة Gaming مكتبية",
+    "brand": "Generic",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 100,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://fantechworld.com/cdn/shop/files/ProductImageWS311Black.png?v=1756437067",
+    "extraImages": [],
+    "features": [
+      "سطح واسع ومستقر لأجهزة الألعاب والشاشات",
+      "هيكل معدني متين مقاوم للاهتزاز",
+      "تصميم عصري مناسب لغرف الألعاب والمكاتب"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "جديد بالكرتونة"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "طاولة غيمنغ عملية بسطح متين وتصميم عصري لاستيعاب شاشات وملحقات الألعاب."
+  },
+  {
+    "id": "KH-FUR-03",
+    "name": "FANTECH DW207 KYOTO WorkStation Height Adjustable Desk",
+    "brand": "Fantech",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 110,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://fantechworld.com/cdn/shop/files/ProductImageWS311Black.png?v=1756437067",
+    "extraImages": [],
+    "features": [
+      "آلية ضبط سلسة للارتفاع للتبديل بين الجلوس والوقوف",
+      "إمكانية إمالة زاوية سطح الطاولة من 0° إلى 48° للرسم والقراءة والكتابة",
+      "هيكل متين وأساس ثابت للمعدات المكتبية"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "زاوية ميلان 0-48°"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "طاولة عمل ذكية قابلة لتعديل الارتفاع وزاوية السطح حتى 48 درجة لبيئة عمل صحية."
+  },
+  {
+    "id": "KH-FUR-04",
+    "name": "Chaho YT-1219 Gaming Chair (أبيض)",
+    "brand": "Chaho",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 110,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://assets.meetion.com/meetion-store/products/chr04/black-gray-1.webp?imageMogr2/thumbnail/640x/format/webp/quality/80",
+    "extraImages": [],
+    "features": [
+      "تصميم رياضي مريح لجلسات اللعب الطويلة",
+      "وسائد دعم للرقبة وأسفل الظهر",
+      "إمكانية تعديل الارتفاع وإمالة مسند الظهر",
+      "قاعدة متينة بعجلات سلسة"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "اللون الأبيض"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "كرسي غيمنغ أنيق باللون الأبيض يجمع بين التصميم الرياضي والراحة اليومية."
+  },
+  {
+    "id": "KH-FUR-05",
+    "name": "Chaho YT-1219 Gaming Chair (أسود)",
+    "brand": "Chaho",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 110,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://assets.meetion.com/meetion-store/products/chr04/black-gray-1.webp?imageMogr2/thumbnail/640x/format/webp/quality/80",
+    "extraImages": [],
+    "features": [
+      "تصميم رياضي مريح لجلسات اللعب الطويلة",
+      "وسائد دعم للرقبة وأسفل الظهر",
+      "إمكانية تعديل الارتفاع وإمالة مسند الظهر",
+      "قاعدة متينة بعجلات سلسة"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "اللون الأسود"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "كرسي غيمنغ عملي باللون الأسود مع دعم للرقبة وأسفل الظهر وقابلية الإمالة."
+  },
+  {
+    "id": "KH-FUR-06",
+    "name": "Chaho YT-099 Gaming Chair",
+    "brand": "Chaho",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 120,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://assets.meetion.com/meetion-store/products/chr05/black-gray-1.webp?imageMogr2/thumbnail/640x/format/webp/quality/80",
+    "extraImages": [],
+    "features": [
+      "تصميم غيمنغ مريح بدعم للرقبة والظهر",
+      "مساند ذراع مبطنة",
+      "قابلية إمالة الظهر وتعديل الارتفاع",
+      "عجلات دوارة 360 درجة"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "جديد بالكرتونة"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "كرسي غيمنغ Chaho YT-099 بتصميم مريح وهيكل متين للاستخدام المكتبي والألعاب."
+  },
+  {
+    "id": "KH-FUR-07",
+    "name": "Dowinx Gaming Chair",
+    "brand": "Dowinx",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 125,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://www.meetion.com/lifisher-m4425/17233956426049/png80-t3-scale100.webp",
+    "extraImages": [],
+    "features": [
+      "تصميم مريح مع وسائد دعم للرقبة والقطنية",
+      "حشوة إسفنجية عالية الكثافة",
+      "إمالة مرنة لمسند الظهر",
+      "قاعدة قوية بعجلات هادئة"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "جديد بالكرتونة"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "كرسي غيمنغ Dowinx مريح بتنجيد متين ووسائد داعمة للجلسات الطويلة."
+  },
+  {
+    "id": "KH-FUR-08",
+    "name": "TENGU YT-727 Gaming Chair (أبيض - EAST SEAT)",
+    "brand": "Tengu",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 125,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://assets.meetion.com/meetion-store/products/chr04/black-gray-1.webp?imageMogr2/thumbnail/640x/format/webp/quality/80",
+    "extraImages": [],
+    "features": [
+      "كرسي غيمنغ بتصميم EAST SEAT المريح",
+      "وسائد للرأس وأسفل الظهر",
+      "إمكانية إمالة مسند الظهر وضبط الارتفاع",
+      "قاعدة خماسية ثابتة بعجلات سلسة"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "اللون الأبيض"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "كرسي غيمنغ TENGU YT-727 باللون الأبيض الأنيق مع دعم مريح للظهر والرقبة."
+  },
+  {
+    "id": "KH-FUR-09",
+    "name": "TENGU YT-727 Gaming Chair (أحمر - EAST SEAT)",
+    "brand": "Tengu",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 125,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://fantechworld.com/cdn/shop/files/ProductImage_GC191Red.png?v=1751955117",
+    "extraImages": [],
+    "features": [
+      "كرسي غيمنغ بتصميم EAST SEAT المريح",
+      "وسائد للرأس وأسفل الظهر",
+      "إمكانية إمالة مسند الظهر وضبط الارتفاع",
+      "قاعدة خماسية ثابتة بعجلات سلسة"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "اللون الأحمر"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "كرسي غيمنغ TENGU YT-727 باللون الأحمر الرياضي مع دعم كامل للظهر والرقبة."
+  },
+  {
+    "id": "KH-FUR-10",
+    "name": "Meetion CHR05 Gaming Chair",
+    "brand": "Meetion",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 130,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://assets.meetion.com/meetion-store/products/chr05/black-gray-1.webp?imageMogr2/thumbnail/640x/format/webp/quality/80",
+    "extraImages": [],
+    "features": [
+      "كرسي ألعاب رياضي من Meetion",
+      "وسائد دعم للرأس وأسفل الظهر",
+      "إمالة مرنة لمسند الظهر",
+      "عجلات هادئة بدوران 360 درجة وهيكل متين"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "جديد بالكرتونة"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "كرسي ألعاب Meetion CHR05 بتصميم رياضي عملي وراحة عالية للعمل واللعب."
+  },
+  {
+    "id": "KH-FUR-11",
+    "name": "Gaming Chair SBF G944",
+    "brand": "SBF",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 135,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://assets.meetion.com/meetion-store/products/chr05/black-gray-1.webp?imageMogr2/thumbnail/640x/format/webp/quality/80",
+    "extraImages": [],
+    "features": [
+      "تصميم غيمنغ مريح لجلسات اللعب الطويلة",
+      "وسائد دعم للرقبة وأسفل الظهر",
+      "مسند ظهر قابل للإمالة",
+      "قاعدة متينة بعجلات سلسة الحركة"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "جديد بالكرتونة"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "كرسي غيمنغ SBF G944 بتصميم مريح ودعم ممتاز للظهر للاستخدام اليومي."
+  },
+  {
+    "id": "KH-FUR-12",
+    "name": "Meetion CHR04 Gaming Chair",
+    "brand": "Meetion",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 140,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://assets.meetion.com/meetion-store/products/chr04/black-gray-1.webp?imageMogr2/thumbnail/640x/format/webp/quality/80",
+    "extraImages": [],
+    "features": [
+      "إمالة مسند الظهر من 90° إلى 150°",
+      "وسادة للرأس ووسادة كبيرة لدعم أسفل الظهر",
+      "خامات PC + PVC متينة وسهلة التنظيف",
+      "مساند ذراعين مبطنة",
+      "عجلات هادئة 360° وهيكل معدني يتحمل حتى 120 كغ"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "تحمل حتى 120 كغ"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "كرسي ألعاب احترافي Meetion CHR04 بإمالة حتى 150 درجة وهيكل معدني متين يتحمل 120 كغ."
+  },
+  {
+    "id": "KH-FUR-13",
+    "name": "Chaho YT-055 Gaming Chair with Footrest RGB",
+    "brand": "Chaho",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 145,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://www.meetion.com/lifisher-m4425/17098002736517/png80-t3-scale100.webp",
+    "extraImages": [],
+    "features": [
+      "إضاءة RGB محيطية جذابة",
+      "مسند قدمين مدمج قابل للسحب للاسترخاء",
+      "وسائد دعم للرقبة وأسفل الظهر",
+      "إمالة مرنة لمسند الظهر وهيكل ثابت"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "إضاءة RGB مع مسند أقدام"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "كرسي غيمنغ Chaho YT-055 مزود بإضاءة RGB ومسند أقدام مدمج لتجربة لعب مريحة."
+  },
+  {
+    "id": "KH-FUR-14",
+    "name": "FANTECH WORKSTATION WS311 Adjustable Desk",
+    "brand": "Fantech",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 165,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://fantechworld.com/cdn/shop/files/ProductImageWS311Black.png?v=1756437067",
+    "extraImages": [],
+    "features": [
+      "مكتب كهربائي ذكي قابل لتعديل الارتفاع بلمسة زر من 73 سم حتى 118 سم",
+      "سطح بطول 110 سم × عرض 60 سم مغطى بألياف الكربون ومقاوم للانزلاق",
+      "يتحمل وزن حتى 60 كغ",
+      "حامل أكواب قابل للطي وحامل لسماعة الرأس"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "110×60 سم - كهربائي"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "طاولة مكتبية كهربائية Fantech WS311 بسطح ألياف كربون وتعديل ارتفاع كهربائي حتى 118 سم."
+  },
+  {
+    "id": "KH-FUR-15",
+    "name": "Fantech OCA259PRO Ergonomic Office Chair",
+    "brand": "Fantech",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 174,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://fantechworld.com/cdn/shop/files/Product_Image_OC1_Pro_black.png?v=1761297668",
+    "extraImages": [],
+    "features": [
+      "ظهر شبكي عالي التهوية مع مقعد إسفنجي عالي الكثافة",
+      "مسند أقدام مدمج قابل للسحب",
+      "مسند رأس ودعم قطنية قابلان للتعديل",
+      "علاقة ملابس خلفية",
+      "قاعدة ألمنيوم متينة ورافع غازي Class 4"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "شبكي مع مسند أقدام"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "كرسي مكتبي احترافي Fantech OCA259PRO بظهر شبكي مريح ومسند أقدام قابل للسحب."
+  },
+  {
+    "id": "KH-FUR-16",
+    "name": "Meetion CHR14 Gaming Chair",
+    "brand": "Meetion",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 175,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://www.meetion.com/lifisher-m4425/17233956426049/png80-t3-scale100.webp",
+    "extraImages": [],
+    "features": [
+      "إمالة مسند الظهر تصل حتى 180°",
+      "تصميم رياضي بنقشة ماسية مطرزة من جلد PU + PVC",
+      "وسائد قطنية للرأس وأسفل الظهر",
+      "رافع غازي معتمد من SGS",
+      "أبعاد 49×66×124 سم ووزن 17 كغ"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "إمالة حتى 180 درجة"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "كرسي غيمنغ احترافي Meetion CHR14 بتطريز ماسي فاخر وإمالة كاملة حتى 180 درجة."
+  },
+  {
+    "id": "KH-FUR-17",
+    "name": "FANTECH GC191 Korsi Gaming Chair",
+    "brand": "Fantech",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 189,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://fantechworld.com/cdn/shop/files/ProductImage_GC191Red.png?v=1751955117",
+    "extraImages": [],
+    "features": [
+      "كرسي ألعاب مريح بتصميم رياضي أنيق",
+      "وسائد دعم للرأس والقطنية",
+      "مسند ظهر قابل للإمالة وضبط الارتفاع",
+      "قاعدة قوية بعجلات سلسة الحركة"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "جديد بالكرتونة"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "كرسي غيمنغ Fantech Korsi GC191 يجمع بين التصميم الجذاب والدعم المريح لساعات اللعب."
+  },
+  {
+    "id": "KH-FUR-18",
+    "name": "Fantech Alpha GC-283 Gaming Chair (الإصدار القياسي)",
+    "brand": "Fantech",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 189,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://fantechworld.com/cdn/shop/files/Product_Image_GC283_Blue.png?v=1751949311",
+    "extraImages": [],
+    "features": [
+      "تصميم رياضي داعم للجسم من سلسلة Alpha",
+      "وسادتان لدعم الرقبة وأسفل الظهر",
+      "إمالة مرنة للظهر وحشوة إسفنجية مريحة",
+      "كسوة جلد اصطناعي متين وسهل التنظيف"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "جديد بالكرتونة"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "كرسي ألعاب Fantech Alpha GC-283 بكسوة جلدية متينة ووسائد دعم للرقبة والظهر."
+  },
+  {
+    "id": "KH-FUR-19",
+    "name": "Meetion CHR31 Ergonomic Chair",
+    "brand": "Meetion",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 190,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://assets.meetion.com/meetion-store/products/chr31/black-1.webp",
+    "extraImages": [],
+    "features": [
+      "هيكل مقسم هندسياً لدعم العمود الفقري",
+      "قماش شبكي عالي التهوية للظهر ومسند الرأس",
+      "دعم قطنية مخصص لأسفل الظهر",
+      "مسند قدمين قابل للتمديد والطي",
+      "مساند ذراع قابلة للتعديل وقاعدة نجمية متينة"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "شبكي مع مسند قدمين"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "كرسي Meetion CHR31 الهندسي الشبكي مع مسند قدمين قابل للتمديد وتهوية ممتازة."
+  },
+  {
+    "id": "KH-FUR-20",
+    "name": "Meetion MT-CHR25 Gaming Chair",
+    "brand": "Meetion",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 199,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://www.meetion.com/lifisher-m4425/16924578736986/png80-t3-scale100.webp",
+    "extraImages": [],
+    "features": [
+      "كرسي ألعاب احترافي عريض ومريح من Meetion",
+      "وسائد دعم للرأس وأسفل الظهر",
+      "إمالة مرنة لمسند الظهر",
+      "هيكل معدني قوي وعجلات هادئة بدوران 360°"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "جديد بالكرتونة"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "كرسي غيمنغ Meetion MT-CHR25 بتنجيد مريح ودعم ممتاز لجلسات اللعب والعمل الطويلة."
+  },
+  {
+    "id": "KH-FUR-21",
+    "name": "Meetion CHR32 Ergo Gaming Chair",
+    "brand": "Meetion",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 199,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://assets.meetion.com/meetion-store/products/chr32/black-1.webp",
+    "extraImages": [],
+    "features": [
+      "تصميم إرجونومي متطور يجمع بين الغيمنغ والراحة المكتبية",
+      "دعم كامل للفقرات القطنية والرقبة",
+      "مساند ذراعين قابلة للتعديل",
+      "قاعدة خماسية متينة بعجلات سلسة"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "تصميم إرجونومي"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "كرسي Meetion CHR32 الهندسي المريح للعمل المكتبي والألعاب الاحترافية."
+  },
+  {
+    "id": "KH-FUR-22",
+    "name": "Fantech GD1014 LiftZone Gaming Desk",
+    "brand": "Fantech",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 209,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://fantechworld.com/cdn/shop/files/Product_Image_LiftZone_GD1014_1.png?v=1786070883",
+    "extraImages": [],
+    "features": [
+      "طاولة غيمنغ كهربائية قابلة لتعديل الارتفاع",
+      "سطح واسع بأبعاد 140 × 60 سم باللون الأسود",
+      "هيكل فولاذي متين (Cold Rolled Steel) لثبات عالٍ",
+      "تنظيم عملي للكابلات والملحقات"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "140×60 سم - كهربائي"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "طاولة Fantech LiftZone GD1014 الواسعة بمقاس 140×60 سم وهيكل فولاذي متين."
+  },
+  {
+    "id": "KH-FUR-23",
+    "name": "FANTECH LEDARE GC192 Gaming Chair",
+    "brand": "Fantech",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 210,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://fantechworld.com/cdn/shop/files/ProductImage_GC192Black.png?v=1751950058",
+    "extraImages": [],
+    "features": [
+      "كرسي غيمنغ بتصميم جريء ودعم إرجونومي متكامل",
+      "إمالة مرنة للظهر وتعديل ارتفاع سلس",
+      "وسائد دعم للرقبة وأسفل الظهر",
+      "قاعدة متينة بعجلات هادئة"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "جديد بالكرتونة"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "كرسي ألعاب Fantech Ledare GC192 بتصميم عصري وراحة طويلة الأمد للاعبين."
+  },
+  {
+    "id": "KH-FUR-24",
+    "name": "Meetion MT-CHR22 Ultra Gaming Chair",
+    "brand": "Meetion",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 210,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://www.meetion.com/lifisher-m4425/17098002736517/png80-t3-scale100.webp",
+    "extraImages": [],
+    "features": [
+      "فئة Ultra Gaming Chair من Meetion",
+      "تصميم رياضي داعم للجسم والرقبة والظهر",
+      "قابلية إمالة الظهر وضبط مساند الذراعين",
+      "هيكل متين وعجلات سلسة منخفضة الضجيج"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "فئة Ultra"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "كرسي ألعاب Meetion MT-CHR22 من فئة Ultra الاحترافية بجودة تصنيع عالية وراحة فائقة."
+  },
+  {
+    "id": "KH-FUR-25",
+    "name": "FANTECH OC1 Ergonomic Office Chair",
+    "brand": "Fantech",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 215,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://fantechworld.com/cdn/shop/files/Product_Image_OC1_black.png?v=1761381797",
+    "extraImages": [],
+    "features": [
+      "مسند رأس إرجونومي قابل للتعديل 4D",
+      "مساند ذراعين مرنة 3D",
+      "مقعد منزلق قابل لتعديل العمق مع دعم قطنية قابل للضبط",
+      "إمالة حتى 129° مع 3 وضعيات قفل",
+      "رافع غازي BIFMA Level 3"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "مسند رأس 4D وذراع 3D"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "كرسي مكتبي هندسي Fantech OC1 بمقعد منزلق ومسند رأس 4D ودعم مثالي للعمود الفقري."
+  },
+  {
+    "id": "KH-FUR-26",
+    "name": "FANTECH GD914 Adjustable Rising Desk",
+    "brand": "Fantech",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 225,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://lale.ams3.digitaloceanspaces.com/fantech/uploads/attachment/upload/1963/FANTECH_GD914_ADJUSTABLE_RISING_DESK_-_White__1.jpg",
+    "extraImages": [],
+    "features": [
+      "طاولة كهربائية قابلة لتعديل الارتفاع للعمل واللعب",
+      "تتحمل وزن حتى 80 كغ",
+      "سطح أنيق وعصري مقاوم للخدش",
+      "مزودة بحامل أكواب وحامل سماعة رأس قابلين للطي"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "تحمل حتى 80 كغ"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "طاولة عمل وألعاب كهربائية Fantech GD914 بقدرة تحمل 80 كغ وحوامل مدمجة للأكواب والسماعة."
+  },
+  {
+    "id": "KH-FUR-27",
+    "name": "FANTECH OC1 PRO Ergonomic Office Chair",
+    "brand": "Fantech",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 245,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://fantechworld.com/cdn/shop/files/Product_Image_OC1_Pro_black.png?v=1761297668",
+    "extraImages": [],
+    "features": [
+      "إصدار PRO مع مسند رأس 4D ومساند ذراعين 3D",
+      "دعم قطنية إرجونومي متطور ومقعد منزلق",
+      "إمالة حتى 129° بـ 3 وضعيات قفل",
+      "عجلات صامتة مزودة بفرامل أمان"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "إصدار PRO"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "كرسي مكتبي احترافي Fantech OC1 PRO بتحكم كامل 4D/3D وعجلات صامتة عالية الثبات."
+  },
+  {
+    "id": "KH-FUR-28",
+    "name": "Fantech Alpha GC-283 Gaming Chair (الإصدار الكامل)",
+    "brand": "Fantech",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 249,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://fantechworld.com/cdn/shop/files/Product_Image_GC283_Blue.png?v=1751949311",
+    "extraImages": [],
+    "features": [
+      "متوفر بالألوان الأبيض والبني المحمر والأسود",
+      "وسادتان خارجيتان لدعم الرقبة وأسفل الظهر",
+      "مسند ظهر مرن قابل للإمالة وحشوة إسفنج مرن",
+      "كسوة جلد اصطناعي مقاوم للاهتراء وسهل التنظيف"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "أبيض / بني محمر / أسود"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "كرسي غيمنغ Fantech GC283 بتنجيد جلدي فاخر ووسائد دعم للرقبة وأسفل الظهر."
+  },
+  {
+    "id": "KH-FUR-29",
+    "name": "FANTECH WORKSTATION WS514 Adjustable Rising Desk",
+    "brand": "Fantech",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 249,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://lale.ams3.digitaloceanspaces.com/fantech/uploads/attachment/upload/2876/FANTECH-WORKSTATION-WS514-ADJUSTABLE-RISING-GAMING-DESK.jpg",
+    "extraImages": [],
+    "features": [
+      "محرك ثنائي (Dual Motor) لحركة سلسة وهادئة",
+      "تعديل ارتفاع من 74 سم إلى 118 سم",
+      "سطح واسع 140 × 70 سم يتحمل حتى 80 كغ",
+      "لوحة تحكم ذكية تحفظ 4 وضعيات ارتفاع مع نظام تنبيه لتغيير الوضعية"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "محرك ثنائي - 140×70 سم"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "طاولة مكتبية كهربائية Fantech WS514 بمحرك ثنائي وذاكرة 4 وضعيات وتنبيه صحي للوقوف."
+  },
+  {
+    "id": "KH-FUR-30",
+    "name": "Fantech GC284 NeoArc Gaming Chair",
+    "brand": "Fantech",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 269,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://fantechworld.com/cdn/shop/files/Product_Image_NeoArc_GC284_1.png?v=1786072790",
+    "extraImages": [],
+    "features": [
+      "تصميم NeoArc العصري مع تنجيد جلد PU فاخر",
+      "حشوة إسفنج Cold-Cure عالي المتانة",
+      "مساند ذراع قابلة للتعديل وهيكل فولاذي معزز",
+      "عجلات سلسة وصديقة للأرضيات"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "أسود / رمادي"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "كرسي غيمنغ Fantech GC284 NeoArc بإسفنج Cold-Cure وتصميم رياضي فاخر."
+  },
+  {
+    "id": "KH-FUR-31",
+    "name": "Fantech GC284P NEO ARC PRO Gaming Chair",
+    "brand": "Fantech",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 299,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://fantechworld.com/cdn/shop/files/Product_Image_NeoArcPro_GC284P_1.png?v=1786071312",
+    "extraImages": [],
+    "features": [
+      "إصدار PRO الفاخر بتنجيد جلد PU عالي الجودة",
+      "إسفنج Cold-Cure يحافظ على شكله لساعات طويلة",
+      "مساند ذراع 3D قابلة للتخصيص الكامل",
+      "قاعدة فولاذية معززة وعجلات صامتة انسيابية"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "إصدار PRO - مساند 3D"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "كرسي الألعاب الاحترافي Fantech GC284P NeoArc Pro بقاعدة فولاذية ومساند ذراع ثلاثية الأبعاد."
+  },
+  {
+    "id": "KH-FUR-32",
+    "name": "Razer Iskur V2 X Gaming Chair (رمادي)",
+    "brand": "Razer",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 299,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://assets3.razerzone.com/t0C6B0-pRZvkS2faN1yhPDvQ1QA=/767x511/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhdc%2Fh86%2F9866568433694%2F250123-iskur-v2-x-fabirc-black-1500x1000-1.jpg",
+    "extraImages": [],
+    "features": [
+      "تنجيد قماشي فاخر باللون الرمادي عالي التهوية ومقاوم للتآكل",
+      "مسند ظهر مدمج يدعم انحناء العمود الفقري والقطنية",
+      "مساند ذراعين قابلة للتعديل وإمالة مرنة للظهر",
+      "قاعدة خماسية متينة بعجلات انسيابية"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "قماش رمادي عالي التهوية"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "كرسي Razer Iskur V2 X الأصلي بتنجيد قماشي رمادي مريح ودعم مدمج للفقرات القطنية."
+  },
+  {
+    "id": "KH-FUR-33",
+    "name": "Razer Iskur V2 X NewGen Ergonomic Gaming Chair Gen-2",
+    "brand": "Razer",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 299,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://assets2.razerzone.com/images/pnx.assets/7e26a109edcd001b2397d365f44a2dcf/razer-iskur-v2x-newgen-ogimage.webp",
+    "extraImages": [],
+    "features": [
+      "الجيل الثاني NewGen بدعم قطنية مدمج محسن",
+      "وسادات إسفنجية عالية الكثافة لثبات وراحة طويلة",
+      "مساند ذراعين قابلة للتعديل وإمالة مريحة",
+      "خامات عالية التهوية ومتينة للجلسات المكثفة"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "إصدار Gen-2 NewGen"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "كرسي الألعاب الهندسي Razer Iskur V2 X NewGen الجيل الثاني بتهوية وراحة ممتازة."
+  },
+  {
+    "id": "KH-FUR-34",
+    "name": "FANTECH DW114 Workstation Dublin Desk",
+    "brand": "Fantech",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 309,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://fantechworld.com/cdn/shop/files/Product_Image_DW114_2.png?v=1762167773",
+    "extraImages": [],
+    "features": [
+      "محرك ثنائي قوي لتعديل الارتفاع بدقة من 73 سم إلى 122 سم",
+      "سطح حديدي مدمج مع ألواح خشبية 140 × 70 سم مغناطيسي بالكامل",
+      "يتحمل وزن ضخم حتى 120 كغ",
+      "شريط إضاءة RGB مغناطيسي مع لوحة تحكم 7 أزرار و4 ذواكر ونظام أمان ضد العوائق"
+    ],
+    "warranty": "6 أشهر كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "محرك ثنائي - تحمل 120 كغ"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "طاولة Fantech DW114 الأقوى بسطح مغناطيسي 140×70 سم ومحرك ثنائي وإضاءة RGB وتحمل 120 كغ."
+  },
+  {
+    "id": "KH-FUR-35",
+    "name": "Fantech CW2 Ergonomic Office Chair (Denver)",
+    "brand": "Fantech",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 329,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://fantechworld.com/cdn/shop/files/Product_Image_CW2_1.png?v=1767149256",
+    "extraImages": [],
+    "features": [
+      "مسند رأس 3D ودعم قطنية قابل لتعديل العمق بـ 4 مستويات",
+      "مساند ذراع 3D ناعمة ومسند أقدام مدمج",
+      "إمالة حتى 135° بـ 4 وضعيات قفل مع تحكم سلكي بـ 3 أذرع ومقعد منزلق",
+      "رافع غازي BIFMA Level 4 يتحمل حتى 136 كغ وعجلات PU صامتة"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "تحمل 136 كغ - مسند أقدام"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "كرسي مكتبي تنفيذي Fantech CW2 Denver بتحكم سلكي ومسند أقدام ورافع غازي Class 4."
+  },
+  {
+    "id": "KH-FUR-36",
+    "name": "Fantech CW1 Black Ergonomic Office Chair (Venice)",
+    "brand": "Fantech",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 359,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://lale.ams3.digitaloceanspaces.com/fantech/uploads/attachment/upload/3428/Fantech_Workstation_CW1_Venice_Executive_Ergonomic_Office_Chair_Black.webp",
+    "extraImages": [],
+    "features": [
+      "دعم قطنية ذاتي التكيف (Auto-Adaptive Lumbar) ومسند رأس 3D",
+      "مساند ذراع 4D ناعمة ومسند أقدام مدمج قابل للسحب",
+      "إمالة حتى 150° بـ 4 وضعيات قفل وتحكم سلكي بـ 4 أذرع ومقعد منزلق",
+      "رافع غازي Class 4 يتحمل حتى 136 كغ"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "اللون الأسود - فئة تنفيذية"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "كرسي مكتبي تنفيذي فاخر Fantech CW1 Venice باللون الأسود مع إمالة 150 درجة ودعم ذاتي للظهر."
+  },
+  {
+    "id": "KH-FUR-37",
+    "name": "Fantech CW1 Ergonomic Office Chair (Venice - رمادي)",
+    "brand": "Fantech",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 369,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://fantechworld.com/cdn/shop/files/Product_Image_CW1_1.png?v=1767149110",
+    "extraImages": [],
+    "features": [
+      "هيكل شبكي Mesh كامل عالي التهوية باللون الرمادي",
+      "مسند أقدام مدمج قابل للسحب وإمالة حتى 150°",
+      "دعم قطنية ديناميكي ذاتي التكيف ومسند رأس 3D ومساند ذراع 4D",
+      "قاعدة معدنية خماسية لامعة ورافع غازي Class 4 يتحمل حتى 136 كغ"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "اللون الرمادي - فئة تنفيذية"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "كرسي مكتبي فاخر Fantech CW1 Venice باللون الرمادي الشبكي ومسند أقدام مدمج وإمالة 150 درجة."
+  },
+  {
+    "id": "KH-FUR-38",
+    "name": "Fantech DW314 WORKSTATION ZURICH Gaming Desk",
+    "brand": "Fantech",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 409,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://fantechworld.com/cdn/shop/files/Product_Image_WorkStation_DW314_7.png?v=1786517341",
+    "extraImages": [],
+    "features": [
+      "محركان مزدوجان للارتفاع + محركان مزدوجان للإمالة الكهربائية",
+      "قدرة تحمل قصوى تصل حتى 100 كغ بثبات فائق",
+      "تصميم Workstation احترافي لبيئات العمل والغيمنغ المتقدمة",
+      "هيكل معدني فائق المتانة"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "4 محركات - تحمل 100 كغ"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "طاولة العمل الفاخرة Fantech DW314 Zurich بمحركات مزدوجة للارتفاع والإمالة وتحمل 100 كغ."
+  },
+  {
+    "id": "KH-FUR-39",
+    "name": "ASUS ROG Destrier Core Gaming Chair",
+    "brand": "ASUS",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 465,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://dlcdnwebimgs.asus.com/gain/4481FB23-C53B-425B-B877-7DAF0826BD09/w717/h525/fwebp",
+    "extraImages": [],
+    "features": [
+      "تصميم سايبورغ مستقبلي يدعم انحناءة العمود الفقري والرقبة بدقة",
+      "مساند ذراع 3D ترتفع حتى 14 سم لوضعية اللعب بالهاتف",
+      "قماش شبكي عالي الجودة لتهوية ممتازة",
+      "لوحة رأس مدمجة وقاعدة واسعة متينة"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "تصميم ROG المستقبلي"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "كرسي الألعاب الهندسي ASUS ROG Destrier Core بقماش شبكي وتصميم مستقبلي ومساند ذراع قابلة للرفع."
+  },
+  {
+    "id": "KH-FUR-40",
+    "name": "Razer Iskur V2 X CS2 Dragon Lore Edition",
+    "brand": "Razer",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 515,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://assets3.razerzone.com/t0C6B0-pRZvkS2faN1yhPDvQ1QA=/767x511/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhdc%2Fh86%2F9866568433694%2F250123-iskur-v2-x-fabirc-black-1500x1000-1.jpg",
+    "extraImages": [],
+    "features": [
+      "إصدار حصري بتصميم CS2 Dragon Lore المميز",
+      "دعم قطنية مدمج ووسادات إسفنجية عالية الكثافة",
+      "مساند ذراع قابلة للتعديل وإمالة مرنة للظهر",
+      "جودة تصنيع أصلية من Razer"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "إصدار CS2 Dragon Lore"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "إصدار خاص وحصري من كرسي Razer Iskur V2 X بتصميم CS2 Dragon Lore الأسطوري."
+  },
+  {
+    "id": "KH-FUR-41",
+    "name": "Razer Enki Pro HyperSpeed Gaming Chair",
+    "brand": "Razer",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 529,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://assets2.razerzone.com/images/og-image/razer-enki-pro-1200x630.jpg",
+    "extraImages": [],
+    "features": [
+      "كرسي جيمنج فاخر باللون الأسود مع إضاءة محيطية Chroma RGB على الأكتاف وشعار Razer المضيء",
+      "دعم مدمج لأسفل الظهر (Built-in Ergonomic Lumbar Arch)",
+      "مساند ذراع قابلة للتعديل وإمالة للظهر",
+      "قاعدة خماسية صلبة بعجلات انسيابية"
+    ],
+    "warranty": "6 أشهر كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "إضاءة Chroma RGB"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "كرسي Razer Enki Pro HyperSpeed الفاخر بإضاءة Chroma RGB ودعم مدمج لأسفل الظهر."
+  },
+  {
+    "id": "KH-FUR-42",
+    "name": "Razer Iskur V2 Adjustable Lumbar Curve Gaming Chair",
+    "brand": "Razer",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 575,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://assets3.razerzone.com/lYEZ4ablGVPNNhY-s8tFeLMyYTg=/767x511/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh56%2Fhe2%2F10003783286814%2F260106-iskur-v2-newgen-blackgreen-1500x1000-1.png",
+    "extraImages": [],
+    "features": [
+      "نظام دعم قطنية تكيفي 6D يتبع انحناء العمود الفقري بدقة",
+      "تنجيد فاخر مع وسادات إسفنجية عالية الكثافة",
+      "مساند ذراع 4D وآلية إمالة متطورة",
+      "مصمم بالتعاون مع أبطال الرياضات الإلكترونية"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "دعم قطنية قابل للتعديل"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "كرسي Razer Iskur V2 الاحترافي بنظام دعم قطنية قابل للتعديل لراحة فائقة طوال اليوم."
+  },
+  {
+    "id": "KH-FUR-43",
+    "name": "Razer Iskur V2 NewGen Gaming Chair (أسود)",
+    "brand": "Razer",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 599,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://assets3.razerzone.com/lYEZ4ablGVPNNhY-s8tFeLMyYTg=/767x511/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh56%2Fhe2%2F10003783286814%2F260106-iskur-v2-newgen-blackgreen-1500x1000-1.png",
+    "extraImages": [],
+    "features": [
+      "أحدث إصدار NewGen من سلسلة Iskur V2 بتهوية متطورة",
+      "دعم قطنية تكيفي متكامل ووسادات فائقة الراحة",
+      "مساند ذراع قابلة للتعديل بمرونة وإمالة واسعة",
+      "قاعدة فولاذية فائقة الثبات"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "اللون الأسود - NewGen"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "كرسي Razer Iskur V2 NewGen الفاخر باللون الأسود لأقصى درجات الدعم والتهوية."
+  },
+  {
+    "id": "KH-FUR-44",
+    "name": "Razer Iskur V2 NewGen Gaming Chair (رمادي فاتح)",
+    "brand": "Razer",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 599,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://assets3.razerzone.com/_gmKsQNdVZBPtcocuO8hjiLuLjg=/767x511/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhf7%2Fha7%2F10009901334558%2F260106-iskur-v2-newgen-light-gray-1500x1000-1.png",
+    "extraImages": [],
+    "features": [
+      "أحدث إصدار NewGen باللون الرمادي الفاتح الأنيق",
+      "دعم قطنية تكيفي متكامل وخامة عالية التهوية",
+      "مساند ذراع قابلة للتعديل بمرونة وإمالة واسعة",
+      "قاعدة فولاذية فائقة الثبات"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "اللون الرمادي الفاتح - NewGen"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "كرسي Razer Iskur V2 NewGen باللون الرمادي الفاتح بتصميم فاخر وتهوية متقدمة."
+  },
+  {
+    "id": "KH-FUR-45",
+    "name": "Lian Li DK-07 Tempered Top Glass Height Adjustable Wood Desk Case",
+    "brand": "Lian Li",
+    "category": "كراسي وطاولات مكتبية وغيمينغ",
+    "priceUsd": 1499,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://lian-li.com/wp-content/uploads/2026/03/DK07-WD-im001.jpg",
+    "extraImages": [],
+    "features": [
+      "طاولة كمبيوتر كهربائية فاخرة من خشب الجوز الداكن الصلب وزجاج مقسى علوي",
+      "تدعم تركيب نظامي كمبيوتر E-ATX مزدوجين داخل الطاولة",
+      "تعديل ارتفاع كهربائي من 67.6 إلى 116.2 سم",
+      "أبعاد 148 × 87.7 سم مع شحن لاسلكي مدمج وتنظيم احترافي للكابلات"
+    ],
+    "warranty": "سنة كفالة",
+    "warrantyDetails": "جديد بالكرتونة",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "طاولة + صندوق PC مدمج"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "تحفة هندسية من Lian Li تجمع بين مكتب كهربائي فاخر من خشب الجوز وصندوق PC زجاجي مدمج."
+  },
+  {
+    "id": "KH-AG-LAP-01",
+    "name": "ASUS ROG Zephyrus G16 GU605 (RTX 5090 24GB)",
+    "brand": "ASUS",
+    "category": "لابتوبات جيمنج (الوكالة الرسمية)",
+    "priceUsd": 5499,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://dlcdnwebimgs.asus.com/gain/ECB739CB-4E3F-4B1E-89DF-A17A9D75E2DD",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core Ultra 9 285H",
+      "كرت الشاشة: NVIDIA GeForce RTX 5090 24GB",
+      "الرام: 64GB DDR5",
+      "التخزين: 2TB PCIe Gen4 NVMe SSD",
+      "الشاشة: 16 بوصة 2.5K WQXGA OLED بتردد 240Hz",
+      "التصميم والتبريد: هيكل ألمنيوم فاخر ونظام تبريد ROG متطور",
+      "الاتصال: Wi-Fi 6E وBluetooth ومنافذ USB-C وHDMI"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "RTX 5090 24GB / 64GB DDR5 - جديد مختوم"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "أقوى لابتوب جيمنج وصناعة محتوى نحيف من سلسلة ROG Zephyrus بمعالج Core Ultra 9 285H وكرت RTX 5090 24GB وشاشة OLED 2.5K 240Hz ورام 64GB."
+  },
+  {
+    "id": "KH-AG-LAP-02",
+    "name": "ASUS ROG Strix G18 G815 (RTX 5080 16GB)",
+    "brand": "ASUS",
+    "category": "لابتوبات جيمنج (الوكالة الرسمية)",
+    "priceUsd": 3299,
+    "oldPriceUsd": 3449,
+    "imageUrl": "https://dlcdnwebimgs.asus.com/files/media/d5444a20-d912-40e3-9a48-bbacc1e3a4e6/v1/images/Strix_G18_KV_1x1.webp",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core Ultra 9 275HX (24 نواة حتى 5.4GHz)",
+      "كرت الشاشة: NVIDIA GeForce RTX 5080 16GB GDDR7",
+      "الرام: 32GB DDR5-5600",
+      "التخزين: 2TB M.2 NVMe PCIe 4.0 SSD",
+      "الشاشة: 18 بوصة WQXGA 2.5K (2560x1600) بتردد 240Hz ودعم G-SYNC",
+      "المزايا: لوحة مفاتيح RGB وتبريد ROG متقدم ومفتاح MUX"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "RTX 5080 16GB / 32GB / 2TB - جديد مختوم"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "وحش الألعاب والمونتاج بشاشة عملاقة 18 بوصة 2.5K 240Hz ومعالج Core Ultra 9 275HX وكرت RTX 5080 16GB GDDR7 وقرص 2TB SSD."
+  },
+  {
+    "id": "KH-AG-LAP-03",
+    "name": "Lenovo Legion Pro 5 16IAX10H AI (RTX 5070 Ti 12GB)",
+    "brand": "Lenovo",
+    "category": "لابتوبات جيمنج (الوكالة الرسمية)",
+    "priceUsd": 2659,
+    "oldPriceUsd": 2759,
+    "imageUrl": "https://i5.walmartimages.com/seo/Lenovo-Legion-Pro-5-16IAX10H-83LU-Intel-Core-Ultra-9-275HX-5-4-GHz-Win-11-Home-GeForce-RTX-5070-Ti-32-GB-RAM-1-TB-SSD-NVMe-x-2-16-OLED-2560-x-1600-WQ_07f071a5-1a04-4667-98f1-868f1a56c719.7ea08e189295ec264c7f57f01667f355.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core Ultra 9 275HX (24 نواة مدعوم بالذكاء الاصطناعي)",
+      "كرت الشاشة: NVIDIA GeForce RTX 5070 Ti 12GB GDDR7",
+      "الرام: 32GB DDR5-5600 Dual-Channel",
+      "التخزين: 1TB PCIe 4.0 NVMe SSD",
+      "الشاشة: 16 بوصة WQXGA 2.5K OLED بتردد 240Hz و100% DCI-P3",
+      "الاتصال والبطارية: Wi-Fi 7 وBluetooth 5.4 وبطارية 80Wh وكيبورد RGB"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "شاشة 2.5K OLED 240Hz / RTX 5070 Ti"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "لابتوب Legion Pro 5 الاحترافي بشاشة OLED 2.5K 240Hz ومعالج Core Ultra 9 275HX وكرت RTX 5070 Ti 12GB GDDR7 للألعاب والهندسة والذكاء الاصطناعي."
+  },
+  {
+    "id": "KH-AG-LAP-04",
+    "name": "ASUS ROG Strix G18 (RTX 5070 Ti 12GB)",
+    "brand": "ASUS",
+    "category": "لابتوبات جيمنج (الوكالة الرسمية)",
+    "priceUsd": 2649,
+    "oldPriceUsd": 2749,
+    "imageUrl": "https://dlcdnwebimgs.asus.com/files/media/d5444a20-d912-40e3-9a48-bbacc1e3a4e6/v1/images/Strix_G18_KV_1x1.webp",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core Ultra 9 275HX (24 نواة حتى 5.4GHz)",
+      "كرت الشاشة: NVIDIA GeForce RTX 5070 Ti 12GB GDDR7 (140W)",
+      "الرام: 32GB DDR5-5600 قابل للتطوير",
+      "التخزين: 1TB PCIe 4.0 NVMe M.2 SSD",
+      "الشاشة: 18 بوصة 2.5K WQXGA IPS بتردد 240Hz و100% DCI-P3",
+      "المزايا: نظام تبريد ثلاثي المراوح وكيبورد RGB ومفتاح MUX"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "18 بوصة 2.5K 240Hz / RTX 5070 Ti"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "أداء فائق بشاشة 18 بوصة 2.5K IPS 240Hz ومعالج Intel Core Ultra 9 275HX وكرت RTX 5070 Ti 12GB GDDR7 وهارد 1TB PCIe 4.0."
+  },
+  {
+    "id": "KH-AG-LAP-05",
+    "name": "ASUS ROG Strix G16 (2025) G615 (RTX 5070 Ti 12GB)",
+    "brand": "ASUS",
+    "category": "لابتوبات جيمنج (الوكالة الرسمية)",
+    "priceUsd": 2549,
+    "oldPriceUsd": 2649,
+    "imageUrl": "https://dlcdnwebimgs.asus.com/files/media/71a33ba1-1be2-44c1-9541-70b4c800abf8/v1/images/Strix_G16_KV_1x1.webp",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core Ultra 9 275HX (24 نواة)",
+      "كرت الشاشة: NVIDIA GeForce RTX 5070 Ti 12GB GDDR7",
+      "الرام: 16GB DDR5-5600 قابل للتطوير",
+      "التخزين: 1TB PCIe 4.0 NVMe M.2 SSD",
+      "الشاشة: 16 بوصة FHD+ WUXGA (1920x1200) IPS بتردد 165Hz",
+      "المزايا: تصميم 2025 المحدث، كيبورد RGB، وتبريد ROG متطور"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "إصدار 2025 - Core Ultra 9 / RTX 5070 Ti"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "إصدار 2025 من ROG Strix G16 بمعالج Core Ultra 9 275HX وكرت RTX 5070 Ti 12GB وشاشة 16 بوصة WUXGA IPS بتردد 165Hz."
+  },
+  {
+    "id": "KH-AG-LAP-06",
+    "name": "ASUS ROG Strix G16 G614FR (Ryzen 9 9955HX + حقيبة وماوس)",
+    "brand": "ASUS",
+    "category": "لابتوبات جيمنج (الوكالة الرسمية)",
+    "priceUsd": 2399,
+    "oldPriceUsd": 2499,
+    "imageUrl": "https://dlcdnwebimgs.asus.com/files/media/601ee339-f392-4b62-87c3-972107bda726/v1/img/kv/pd-front.png",
+    "extraImages": [],
+    "features": [
+      "المعالج: AMD Ryzen 9 9955HX (16 نواة/32 مسار حتى 5.4GHz وكاش 128MB)",
+      "كرت الشاشة: NVIDIA GeForce RTX 5070 Ti 12GB GDDR7",
+      "الرام: 16GB DDR5-5600 قابل للتطوير",
+      "التخزين: 1TB PCIe 4.0 NVMe M.2 SSD",
+      "الشاشة: 16 بوصة WUXGA FHD+ (1920x1200) بتردد 165Hz و100% DCI-P3 وPANTONE",
+      "الملحقات: باقة كاملة تشمل ماوس وحقيبة ظهر ROG أصلية وكيبورد RGB"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "باقة كاملة مع ماوس وحقيبة ظهر أصلية"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "قوة معالج AMD Ryzen 9 9955HX بـ 16 نواة مع كرت RTX 5070 Ti 12GB وشاشة PANTONE 165Hz، يأتي بباقة كاملة مع ماوس وحقيبة ظهر أصلية."
+  },
+  {
+    "id": "KH-AG-LAP-07",
+    "name": "ASUS ROG Strix G16 (2025) G614PR (Ryzen 9 8940HX)",
+    "brand": "ASUS",
+    "category": "لابتوبات جيمنج (الوكالة الرسمية)",
+    "priceUsd": 2099,
+    "oldPriceUsd": 2199,
+    "imageUrl": "https://dlcdnwebimgs.asus.com/files/media/601ee339-f392-4b62-87c3-972107bda726/v1/img/kv/pd-front.png",
+    "extraImages": [],
+    "features": [
+      "المعالج: AMD Ryzen 9 8940HX للأداء الفائق",
+      "كرت الشاشة: NVIDIA GeForce RTX 5070 Ti 12GB GDDR7 مع DLSS 4",
+      "الرام: 16GB DDR5 5600MHz قابل للتطوير",
+      "التخزين: 1TB PCIe 4.0 NVMe M.2 SSD",
+      "الشاشة: 16 بوصة FHD+ WUXGA بتردد 165Hz",
+      "الاتصال: Wi-Fi 6E وBluetooth وكيبورد RGB"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "Ryzen 9 8940HX / RTX 5070 Ti 12GB"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "خيار ممتاز يجمع معالج AMD Ryzen 9 8940HX وكرت RTX 5070 Ti 12GB ورام 16GB DDR5-5600 وشاشة 16 بوصة 165Hz بسعر منافس."
+  },
+  {
+    "id": "KH-AG-LAP-08",
+    "name": "MSI Vector 16 HX A2XWHG AI (RTX 5070 Ti 12GB)",
+    "brand": "MSI",
+    "category": "لابتوبات جيمنج (الوكالة الرسمية)",
+    "priceUsd": 1949,
+    "oldPriceUsd": 2049,
+    "imageUrl": "https://es-store.msi.com/cdn/shop/files/portatil-gaming-msi-vector-16-hx-ai-a2xwhg-097xes.png?v=1741253504&width=640",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core Ultra 7 255HX (حتى 5.2GHz مدعوم بالذكاء الاصطناعي)",
+      "كرت الشاشة: NVIDIA GeForce RTX 5070 Ti 12GB GDDR7",
+      "الرام: 16GB DDR5 5600MHz قابل للتطوير",
+      "التخزين: 1TB NVMe PCIe Gen4 SSD",
+      "الشاشة: 16 بوصة FHD+ IPS بتردد 144Hz",
+      "المزايا: منافذ Thunderbolt 5 مزدوجة، Wi-Fi 7، كيبورد RGB 24 منطقة، وتقنية OverBoost Ultra"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "Core Ultra 7 255HX / RTX 5070 Ti 12GB"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "لابتوب MSI Vector 16 HX AI المخصص للألعاب الثقيلة والهندسة بمعالج Core Ultra 7 255HX وكرت RTX 5070 Ti 12GB ومنافذ Thunderbolt 5."
+  },
+  {
+    "id": "KH-AG-LAP-09",
+    "name": "HP OMEN 16-AN0119 (Core Ultra 9 285H / RTX 5070)",
+    "brand": "HP",
+    "category": "لابتوبات جيمنج (الوكالة الرسمية)",
+    "priceUsd": 1699,
+    "oldPriceUsd": 1749,
+    "imageUrl": "https://cdn.microless.com/products/83b6cd38d89e208ed934c2886032a65b-hi.jpg",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core Ultra 9 285H (16 نواة حتى 5.4GHz وكاش 24MB)",
+      "كرت الشاشة: NVIDIA GeForce RTX 5070 8GB GDDR7",
+      "الرام: 16GB DDR5-5600 MT/s (2x8GB)",
+      "التخزين: 1TB PCIe NVMe M.2 SSD",
+      "الشاشة: 16 بوصة WQXGA 2.5K (2560x1600) IPS بتردد 240Hz وسطوع 500nits و100% sRGB",
+      "المزايا: كيبورد 4-Zone RGB وتصميم Shadow Black أنيق"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "شاشة 2.5K 240Hz / Ultra 9 / RTX 5070"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "توازن استثنائي من HP OMEN 16 بمعالج Core Ultra 9 285H وكرت RTX 5070 8GB وشاشة 2.5K IPS فائقة السطوع بتردد 240Hz."
+  },
+  {
+    "id": "KH-AG-LAP-10",
+    "name": "MSI Katana 17 HX B14WGK (i7-14650HX / RTX 5070)",
+    "brand": "MSI",
+    "category": "لابتوبات جيمنج (الوكالة الرسمية)",
+    "priceUsd": 1729,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://storage-asset.msi.com/global/picture/product/product_17453875563e17f33fdf5d6848a9796baf44abb506.webp",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core i7-14650HX الجيل 14 (حتى 5.2GHz)",
+      "كرت الشاشة: NVIDIA GeForce RTX 5070 8GB GDDR7",
+      "الرام: 16GB DDR5 قابل للتطوير",
+      "التخزين: 1TB NVMe M.2 SSD",
+      "الشاشة: 17.3 بوصة 2K QHD IPS بتردد 240Hz",
+      "المزايا: كيبورد ألعاب مضيء وتبريد Cooler Boost"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "شاشة 17.3 بوصة 2K 240Hz / RTX 5070"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "شاشة ألعاب واسعة 17.3 بوصة بدقة 2K QHD وتردد 240Hz مع معالج Core i7-14650HX وكرت RTX 5070 8GB وهارد 1TB NVMe."
+  },
+  {
+    "id": "KH-AG-LAP-11",
+    "name": "MSI Cyborg 15 C2W (Core 7 240H / RTX 5060 8GB)",
+    "brand": "MSI",
+    "category": "لابتوبات جيمنج (الوكالة الرسمية)",
+    "priceUsd": 1399,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://storage-asset.msi.com/global/picture/product/product_1773815940ad5409c2b58790fc69d17ae0d080bae5.webp",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core 7 240H (10 أنوية/16 مسار حتى 5.2GHz)",
+      "كرت الشاشة: NVIDIA GeForce RTX 5060 8GB GDDR7 مع DLSS 4",
+      "الرام: 16GB DDR5-5600 قابل للتطوير",
+      "التخزين: 1TB PCIe Gen4 NVMe SSD",
+      "الشاشة: 15.6 بوصة FHD IPS بتردد 144Hz",
+      "المزايا: محرك MSI AI Engine، شحن PD 3.0 حتى 100W، وWi-Fi 6E"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "إصدار جديد - Core 7 240H / RTX 5060"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "لابتوب جيمنج عصري وخفيف من MSI بمعالج Intel Core 7 240H وكرت RTX 5060 8GB GDDR7 ورام 16GB DDR5 قابلة للتطوير."
+  },
+  {
+    "id": "KH-AG-LAP-12",
+    "name": "Lenovo LOQ 15IRX10 AI (i7-14700HX / RTX 5060 8GB)",
+    "brand": "Lenovo",
+    "category": "لابتوبات جيمنج (الوكالة الرسمية)",
+    "priceUsd": 1399,
+    "oldPriceUsd": 1425,
+    "imageUrl": "https://psrefstuff.lenovo.com/syspool/Sys/Image/LOQ/LOQ_15IRX10/Compressedimage/LOQ_15IRX10_CT2_01.png",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core i7-14700HX الجيل 14 (20 نواة/28 مسار حتى 5.5GHz)",
+      "كرت الشاشة: NVIDIA GeForce RTX 5060 8GB GDDR7 (100W)",
+      "الرام: 16GB DDR5 SO-DIMM قابل للتطوير",
+      "التخزين: 512GB SSD M.2 PCIe 4.0 NVMe",
+      "الشاشة: 15.6 بوصة FHD IPS 100% sRGB بتردد 144Hz وسطوع 300nits",
+      "المزايا: محرك Lenovo AI Engine+، كيبورد مضيء، ومنافذ HDMI 2.1 وRJ-45 وUSB-C"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "i7-14700HX 20 نواة / RTX 5060 8GB"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "أداء جيمنج وبرمجة جبار بمعالج Core i7-14700HX بـ 20 نواة وكرت RTX 5060 8GB وشاشة 100% sRGB بتردد 144Hz مع نظام تبريد متطور."
+  },
+  {
+    "id": "KH-AG-LAP-13",
+    "name": "HP Victus 15 Gaming (i5-13420H / RTX 3050 6GB)",
+    "brand": "HP",
+    "category": "لابتوبات جيمنج (الوكالة الرسمية)",
+    "priceUsd": 779,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://i5.walmartimages.com/seo/HP-Victus-15-6-Full-HD-144Hz-Gaming-Laptop-Intel-Core-i5-13420H-8GB-RAM-512GB-SSD-NVIDIA-GeForce-RTX-3050-Windows-11-Home_7c0c10a3-497b-4ee5-96ff-f141cb6b2c76.13948645dbdb770e15657fed5bf7b081.png?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core i5-13420H الجيل 13 (8 أنوية/12 مسار)",
+      "كرت الشاشة: NVIDIA GeForce RTX 3050 6GB GDDR6",
+      "الرام: 8GB قابل للتطوير",
+      "التخزين: 512GB NVMe SSD",
+      "الشاشة: 15.6 بوصة FHD (1920x1080) IPS بتردد 144Hz",
+      "المزايا: كيبورد مضيء، بطارية 4 خلايا، منفذ HDMI 2.1، ولون رمادي أنيق"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "اللون الرمادي - RTX 3050 6GB / 144Hz"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "أفضل لابتوب جيمنج وهندسة اقتصادي من HP Victus بمعالج i5-13420H وكرت RTX 3050 نسخة 6GB وشاشة 144Hz."
+  },
+  {
+    "id": "KH-AG-LAP-14",
+    "name": "Lenovo ThinkPad T14 Gen 6 (Core Ultra 7 255U / لمس)",
+    "brand": "Lenovo",
+    "category": "لابتوبات أعمال ومكتبية (الوكالة الرسمية)",
+    "priceUsd": 1399,
+    "oldPriceUsd": 1479,
+    "imageUrl": "https://p1-ofp.static.pub/fes/cms/2025/04/08/mi5qm8tr8bx7flftut4lop021yuv1z747949.png?width=328&height=328",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core Ultra 7 255U للأعمال والذكاء الاصطناعي",
+      "كرت الشاشة: Intel Graphics مدمج",
+      "الرام: 16GB DDR5 SO-DIMM",
+      "التخزين: 512GB NVMe PCIe Gen4 SSD",
+      "الشاشة: 14 بوصة WUXGA FHD+ IPS تدعم اللمس",
+      "المزايا: وزن خفيف 1.4 كغ، متانة ThinkPad القياسية، وWi-Fi 6E"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "شاشة 14 بوصة لمس / وزن 1.4 كغ"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "أيقونة لابتوبات رجال الأعمال والمبرمجين Lenovo ThinkPad T14 Gen 6 بمعالج Core Ultra 7 255U وشاشة لمس WUXGA ووزن 1.4 كغ."
+  },
+  {
+    "id": "KH-AG-LAP-15",
+    "name": "HP OmniBook X Flip 16-AS0023DX (Core Ultra 7 256V / 2-in-1)",
+    "brand": "HP",
+    "category": "لابتوبات أعمال ومكتبية (الوكالة الرسمية)",
+    "priceUsd": 949,
+    "oldPriceUsd": 999,
+    "imageUrl": "https://hp.widen.net/content/ulockcjchm/webp/ulockcjchm.png?w=573&h=430&dpi=72&color=ffffff00",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core Ultra 7 256V (Next Gen AI PC)",
+      "كرت الشاشة: Intel Arc Graphics",
+      "الرام: 16GB LPDDR5x 8533 MT/s",
+      "التخزين: 1TB PCIe Gen4 NVMe M.2 SSD",
+      "الشاشة: 16 بوصة 2K (1920x1200) IPS لمس قابلة للدوران 360 درجة وسطوع 400nits",
+      "المزايا: هيكل ألمنيوم، كاميرا 5MP IR، صوت Poly Studio، Thunderbolt 4، وبطارية 68Wh"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "2-in-1 قابل للدوران / 16GB / 1TB SSD"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "لابتوب وتابلت 2-in-1 فاخر من HP بشاشة 16 بوصة 2K لمس ومعالج Core Ultra 7 256V وكرت Intel Arc ورام 8533MT/s وهارد 1TB."
+  },
+  {
+    "id": "KH-AG-LAP-16",
+    "name": "HP OmniBook X Flip 14-FM0013DX (Core Ultra 5 226V / 2-in-1)",
+    "brand": "HP",
+    "category": "لابتوبات أعمال ومكتبية (الوكالة الرسمية)",
+    "priceUsd": 819,
+    "oldPriceUsd": 879,
+    "imageUrl": "https://hp.widen.net/content/lvgij6avnx/webp/lvgij6avnx.png?w=573&h=430&dpi=72&color=ffffff00",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core Ultra 5 226V (Next Gen AI PC حتى 4.5GHz)",
+      "كرت الشاشة: Intel Arc Graphics (8GB)",
+      "الرام: 16GB LPDDR5x-8533 MT/s",
+      "التخزين: 512GB PCIe Gen4 NVMe M.2 SSD",
+      "الشاشة: 14 بوصة FHD+ 2K IPS لمس قابلة للدوران 360 درجة",
+      "المزايا: تصميم نحيف وخفيف، كيبورد مضيء، Wi-Fi 6E، وThunderbolt 4"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "14 بوصة 2K لمس 360 درجة"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "خفة وأناقة فائقة بحجم 14 بوصة 2-in-1 مع شاشة 2K لمس ومعالج Core Ultra 5 226V ورام 16GB سريعة جداً."
+  },
+  {
+    "id": "KH-AG-LAP-17",
+    "name": "Lenovo V15 G5 IRL (Core i7-13620H / 16GB DDR5)",
+    "brand": "Lenovo",
+    "category": "لابتوبات أعمال ومكتبية (الوكالة الرسمية)",
+    "priceUsd": 719,
+    "oldPriceUsd": 749,
+    "imageUrl": "https://psrefstuff.lenovo.com/syspool/Sys/Image/Lenovo/Lenovo_V15_G5_IRL/Compressedimage/Lenovo_V15_G5_IRL_CT2_04.png",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core i7-13620H الجيل 13 (10 أنوية/16 مسار حتى 4.9GHz)",
+      "كرت الشاشة: Intel UHD Graphics مدمج",
+      "الرام: 16GB DDR5",
+      "التخزين: 512GB NVMe M.2 SSD",
+      "الشاشة: 15.6 بوصة FHD مضادة للتوهج (Anti-glare)",
+      "المنافذ: USB-C 3.2 وUSB 3.2 وHDMI ومنفذ شبكة"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "Core i7-13620H / 16GB DDR5"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "لابتوب أعمال وبرمجة قوي بمعالج i7-13620H من فئة الأداء العالي H ورام 16GB DDR5 وشاشة 15.6 بوصة مضادة للانعكاس."
+  },
+  {
+    "id": "KH-AG-LAP-18",
+    "name": "ASUS Vivobook 15 X1502VA (Core i7-13620H / 16GB)",
+    "brand": "ASUS",
+    "category": "لابتوبات أعمال ومكتبية (الوكالة الرسمية)",
+    "priceUsd": 669,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://in.store.asus.com/media/catalog/product/x/1/x1502va_qt_blu_mso_rfrsh_bcklt_kbd_1__1.png",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core i7-13620H الجيل 13 (10 أنوية حتى 4.9GHz وكاش 24MB)",
+      "كرت الشاشة: Intel UHD Graphics مدمج",
+      "الرام: 16GB DDR4",
+      "التخزين: 512GB NVMe PCIe M.2 SSD",
+      "الشاشة: 15.6 بوصة FHD IPS",
+      "الاتصال: Wi-Fi 6E وBluetooth 5.3 وتصميم Vivobook الأنيق"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "i7-13620H / 16GB / 512GB NVMe"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "أداء ممتاز من ASUS Vivobook 15 بمعالج i7-13620H وشاشة IPS واضحة ورام 16GB وهارد 512GB NVMe."
+  },
+  {
+    "id": "KH-AG-LAP-19",
+    "name": "Lenovo V15 G5 IRL Black (Core i5-13420H / 16GB DDR5)",
+    "brand": "Lenovo",
+    "category": "لابتوبات أعمال ومكتبية (الوكالة الرسمية)",
+    "priceUsd": 659,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://psrefstuff.lenovo.com/syspool/Sys/Image/Lenovo/Lenovo_V15_G5_IRL/Compressedimage/Lenovo_V15_G5_IRL_CT2_04.png",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core i5-13420H الجيل 13 (8 أنوية/12 مسار)",
+      "كرت الشاشة: Intel UHD Graphics مدمج",
+      "الرام: 16GB DDR5 قابل للتطوير",
+      "التخزين: 512GB NVMe M.2 SSD",
+      "الشاشة: 15.6 بوصة FHD مضادة للتوهج (Anti-glare)",
+      "اللون والمنافذ: أسود، USB-C وUSB 3.2 وHDMI"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "اللون الأسود - 16GB DDR5 قابل للتطوير"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "نسخة 16GB DDR5 من Lenovo V15 G5 بمعالج Core i5-13420H القوي للأعمال المكتبية والبرمجة والدراسة الجامعية."
+  },
+  {
+    "id": "KH-AG-LAP-20",
+    "name": "HP OmniBook 3 16-BU0305DX (Core Ultra 5 225U / لمس)",
+    "brand": "HP",
+    "category": "لابتوبات أعمال ومكتبية (الوكالة الرسمية)",
+    "priceUsd": 599,
+    "oldPriceUsd": 649,
+    "imageUrl": "https://hp.widen.net/content/rrkegya2gt/webp/rrkegya2gt.png?w=573&h=430&dpi=72&color=ffffff00",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core Ultra 5 225U (الجيل الحديث للذكاء الاصطناعي)",
+      "كرت الشاشة: Intel UHD Graphics مدمج",
+      "الرام: 8GB DDR5 قابل للتطوير",
+      "التخزين: 512GB NVMe M.2 SSD",
+      "الشاشة: 16 بوصة FHD+ 2K IPS تدعم اللمس",
+      "المزايا: تصميم عصري وشاشة واسعة للعمل والمشاهدة"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "شاشة 16 بوصة 2K لمس / Core Ultra 5"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "شاشة 16 بوصة 2K IPS تدعم اللمس مع معالج Intel Core Ultra 5 225U الحديث بأداء سلس واستهلاك طاقة اقتصادي."
+  },
+  {
+    "id": "KH-AG-LAP-21",
+    "name": "Acer Aspire Go 15 AG15-42P-R917 (Ryzen 7 7730U / 16GB)",
+    "brand": "Acer",
+    "category": "لابتوبات أعمال ومكتبية (الوكالة الرسمية)",
+    "priceUsd": 589,
+    "oldPriceUsd": 659,
+    "imageUrl": "https://c1.neweggimages.com/productimage/nb640/B32ZS260422156R8P84.jpg",
+    "extraImages": [],
+    "features": [
+      "المعالج: AMD Ryzen 7 7730U (8 أنوية/16 مسار)",
+      "كرت الشاشة: AMD Radeon Graphics مدمج",
+      "الرام: 16GB DDR4 3200MHz",
+      "التخزين: 512GB PCIe NVMe SSD",
+      "الشاشة: 15.6 بوصة Full HD (1920x1080)",
+      "المزايا: أداء متعدد المهام عالي وقيمة ممتازة مقابل السعر"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "Ryzen 7 7730U / 16GB RAM / 512GB SSD"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "لابتوب Acer Aspire Go 15 بمعالج AMD Ryzen 7 7730U ثماني النواة ورام 16GB وهارد 512GB SSD بأقوى قيمة مقابل السعر."
+  },
+  {
+    "id": "KH-AG-LAP-22",
+    "name": "HP 15-FD2050WM (Core Ultra 5 225U / شاشة لمس)",
+    "brand": "HP",
+    "category": "لابتوبات أعمال ومكتبية (الوكالة الرسمية)",
+    "priceUsd": 579,
+    "oldPriceUsd": 629,
+    "imageUrl": "https://hp.widen.net/content/5a07fhlysy/webp/5a07fhlysy.png?w=573&h=430&dpi=72&color=ffffff00",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core Ultra 5 225U (12 نواة حتى 4.8GHz)",
+      "كرت الشاشة: Intel UHD Graphics مدمج",
+      "الرام: 8GB قابل للتطوير",
+      "التخزين: 512GB NVMe M.2 SSD",
+      "الشاشة: 15.6 بوصة FHD IPS تدعم اللمس",
+      "المزايا: تصميم خفيف وبطارية طويلة العمر"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "شاشة 15.6 لمس IPS / Core Ultra 5"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "لابتوب HP عملي بمعالج Intel Core Ultra 5 225U وشاشة 15.6 بوصة FHD IPS تدعم اللمس للدراسة والعمل اليومي."
+  },
+  {
+    "id": "KH-AG-LAP-23",
+    "name": "HP 470 G10 (شاشة 17.3 بوصة / i5-1335U / 16GB)",
+    "brand": "HP",
+    "category": "لابتوبات أعمال ومكتبية (الوكالة الرسمية)",
+    "priceUsd": 559,
+    "oldPriceUsd": 609,
+    "imageUrl": "https://hp.widen.net/content/5a07fhlysy/webp/5a07fhlysy.png?w=573&h=430&dpi=72&color=ffffff00",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core i5-1335U الجيل 13 (10 أنوية/12 مسار)",
+      "كرت الشاشة: Intel Iris Xe Graphics",
+      "الرام: 16GB DDR4 3200MHz",
+      "التخزين: 512GB M.2 NVMe SSD",
+      "الشاشة: 17.3 بوصة FHD IPS عملاقة",
+      "المزايا: مناسب للمحاسبة والجداول الهندسية والأعمال المكتبية الواسعة"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "شاشة عملاقة 17.3 بوصة / 16GB RAM"
+    ],
+    "stock": "متوفر",
+    "featured": true,
+    "description": "لابتوب الأعمال ذو الشاشة الواسعة 17.3 بوصة FHD IPS مع معالج Core i5-1335U وكرت Iris Xe ورام 16GB وهارد 512GB SSD."
+  },
+  {
+    "id": "KH-AG-LAP-24",
+    "name": "Lenovo V15 G5 IRL Black (Core i5-13420H / 8GB DDR5)",
+    "brand": "Lenovo",
+    "category": "لابتوبات أعمال ومكتبية (الوكالة الرسمية)",
+    "priceUsd": 559,
+    "oldPriceUsd": 0,
+    "imageUrl": "https://psrefstuff.lenovo.com/syspool/Sys/Image/Lenovo/Lenovo_V15_G5_IRL/Compressedimage/Lenovo_V15_G5_IRL_CT2_04.png",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core i5-13420H الجيل 13 (8 أنوية/12 مسار)",
+      "كرت الشاشة: Intel UHD Graphics مدمج",
+      "الرام: 8GB DDR5 قابل للتطوير",
+      "التخزين: 512GB NVMe M.2 SSD",
+      "الشاشة: 15.6 بوصة FHD مضادة للتوهج (Anti-glare)",
+      "اللون: أسود أنيق مع منافذ USB-C وHDMI"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "اللون الأسود - 8GB DDR5 قابل للتطوير"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "لابتوب Lenovo V15 G5 بمعالج Core i5-13420H من فئة الأداء العالي ورام 8GB DDR5 قابلة للتوسعة بسهولة."
+  },
+  {
+    "id": "KH-AG-LAP-25",
+    "name": "HP OmniBook 3 16-BY0015DX (Ryzen 5 / شاشة 2K لمس)",
+    "brand": "HP",
+    "category": "لابتوبات أعمال ومكتبية (الوكالة الرسمية)",
+    "priceUsd": 549,
+    "oldPriceUsd": 599,
+    "imageUrl": "https://hp.widen.net/content/rrkegya2gt/webp/rrkegya2gt.png?w=573&h=430&dpi=72&color=ffffff00",
+    "extraImages": [],
+    "features": [
+      "المعالج: AMD Ryzen 5",
+      "كرت الشاشة: AMD Radeon Graphics مدمج",
+      "الرام: 8GB DDR5 5500MHz",
+      "التخزين: 256GB SSD M.2",
+      "الشاشة: 16 بوصة FHD+ 2K تدعم اللمس",
+      "المزايا: تصميم حديث وشاشة واسعة للعمل والمشاهدة"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "شاشة 16 بوصة 2K لمس / 8GB DDR5"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "لابتوب HP OmniBook 3 بشاشة 16 بوصة 2K تدعم اللمس ومعالج AMD Ryzen 5 ورام 8GB DDR5 5500MHz."
+  },
+  {
+    "id": "KH-AG-LAP-26",
+    "name": "HP 470 G9 (شاشة 17.3 بوصة / i5-1235U / MX550 2GB)",
+    "brand": "HP",
+    "category": "لابتوبات أعمال ومكتبية (الوكالة الرسمية)",
+    "priceUsd": 519,
+    "oldPriceUsd": 569,
+    "imageUrl": "https://hp.widen.net/content/5a07fhlysy/webp/5a07fhlysy.png?w=573&h=430&dpi=72&color=ffffff00",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core i5-1235U الجيل 12",
+      "كرت الشاشة: NVIDIA GeForce MX550 2GB منفصل",
+      "الرام: 8GB DDR4 3200MHz قابل للتطوير",
+      "التخزين: 512GB M.2 SSD",
+      "الشاشة: 17.3 بوصة FHD IPS عملاقة",
+      "المزايا: كرت شاشة منفصل للتصميم الخفيف مع شاشة 17.3 بوصة مريحة للعين"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "شاشة 17.3 بوصة + كرت MX550 2GB"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "لابتوب HP 470 G9 بشاشة 17.3 بوصة FHD IPS وكرت شاشة منفصل NVIDIA MX550 2GB للأعمال والتصميم الخفيف."
+  },
+  {
+    "id": "KH-AG-LAP-27",
+    "name": "Lenovo V15 G5 IRL (Core i3-1315U / اقتصادي)",
+    "brand": "Lenovo",
+    "category": "لابتوبات أعمال ومكتبية (الوكالة الرسمية)",
+    "priceUsd": 429,
+    "oldPriceUsd": 449,
+    "imageUrl": "https://psrefstuff.lenovo.com/syspool/Sys/Image/Lenovo/Lenovo_V15_G5_IRL/Compressedimage/Lenovo_V15_G5_IRL_CT2_04.png",
+    "extraImages": [],
+    "features": [
+      "المعالج: Intel Core i3-1315U الجيل 13 (6 أنوية/8 مسارات حتى 4.5GHz)",
+      "كرت الشاشة: Intel UHD Graphics مدمج",
+      "الرام: 8GB DDR5 قابل للتطوير",
+      "التخزين: 256GB NVMe SSD",
+      "الشاشة: 15.6 بوصة FHD مضادة للتوهج (Anti-glare)",
+      "المزايا: مثالي للدراسة والعمل المكتبي بتكلفة اقتصادية"
+    ],
+    "warranty": "كفالة الوكالة الرسمية المعتمدة",
+    "warrantyDetails": "جديد مختوم بالكرتونة بضمان الوكالة الرسمية وتوفر الدعم الفني",
+    "delivery": true,
+    "deliveryFee": 0,
+    "deliveryNote": "توصيل وشحن آمن لجميع المحافظات السورية",
+    "installment": true,
+    "installmentDown": 25,
+    "installmentMonths": 12,
+    "options": [
+      "Core i3-1315U الجيل 13 - اقتصادي"
+    ],
+    "stock": "متوفر",
+    "featured": false,
+    "description": "خيار اقتصادي ممتاز من Lenovo V15 G5 بمعالج Core i3 الجيل الثالث عشر وشاشة 15.6 بوصة FHD مضادة للانعكاس."
+  }
+],
       cart: [],
       wishlist: [],
       compare: [],
@@ -2154,7 +5519,9 @@
         if (!state.config.ownerPinHash) state.config.ownerPinHash = DEFAULT_CONFIG.ownerPinHash;
       }
       const savedProducts = safeGet(STORAGE_KEYS.products, null);
-      if (Array.isArray(savedProducts)) state.products = savedProducts;
+      if (Array.isArray(savedProducts) && savedProducts.length >= 106) {
+        state.products = savedProducts;
+      }
       const savedCart = safeGet(STORAGE_KEYS.cart, null);
       if (Array.isArray(savedCart)) state.cart = savedCart;
       const savedWishlist = safeGet(STORAGE_KEYS.wishlist, null);
@@ -2677,7 +6044,8 @@
         } else {
           container.innerHTML = renderEmptyStoreState();
         }
-        renderRecentlyViewed();
+        renderWhiteFridayStrip();
+      renderRecentlyViewed();
         refreshIcons();
         return;
       }
@@ -4967,12 +8335,69 @@
       openWhatsAppMessage(msg);
     }
 
+
+    function renderWhiteFridayStrip() {
+      const grid = document.getElementById('whiteFridayCardsGrid');
+      if (!grid) return;
+      const wfItems = state.products.filter(p => p.category === 'عروض الجمعة البيضاء' || String(p.id || '').startsWith('KH-WF-')).slice(0, 3);
+      if (wfItems.length === 0) {
+        grid.innerHTML = '';
+        return;
+      }
+      grid.innerHTML = wfItems.map(p => {
+        const curUsd = getDisplayPrice(p);
+        const oldUsd = getDisplayOldPrice(p);
+        const savePct = oldUsd > curUsd ? Math.round((1 - curUsd / oldUsd) * 100) : 0;
+        return `
+          <div class="bg-white/95 text-gray-900 rounded-2xl p-3.5 flex items-center gap-3.5 shadow-md hover:-translate-y-0.5 transition cursor-pointer" onclick="navigateTo('product', '${escapeHtml(p.id)}')">
+            <div class="w-16 h-16 rounded-xl bg-gray-50 border border-gray-200 overflow-hidden shrink-0">
+              ${renderProductImageHtml(p.imageUrl, p.name, 'w-full h-full object-contain')}
+            </div>
+            <div class="min-w-0 flex-1 space-y-1">
+              <div class="flex items-center justify-between gap-1">
+                <span class="text-[10px] font-black bg-red-600 text-white px-2 py-0.5 rounded-full">WHITE FRIDAY ${savePct > 0 ? '-' + savePct + '%' : ''}</span>
+                <span class="text-[10px] font-bold text-gray-500">${escapeHtml(p.brand || '')}</span>
+              </div>
+              <div class="text-xs font-black text-gray-950 truncate">${escapeHtml(p.name.replace('White Friday Deal — ', ''))}</div>
+              <div class="flex items-baseline gap-2">
+                <span class="text-sm font-black text-red-600">${formatUsd(curUsd)}</span>
+                ${oldUsd > curUsd ? `<span class="text-[11px] text-gray-400 line-through font-bold">${formatUsd(oldUsd)}</span>` : ''}
+                <span class="text-[10px] font-bold text-gray-600 mr-auto">${formatSyp(curUsd)}</span>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function startWhiteFridayCountdown() {
+      const target = Date.now() + (4 * 86400 + 18 * 3600 + 42 * 60 + 15) * 1000;
+      const tick = () => {
+        const diff = Math.max(0, target - Date.now());
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+        const elD = document.getElementById('wfDays');
+        const elH = document.getElementById('wfHours');
+        const elM = document.getElementById('wfMins');
+        const elS = document.getElementById('wfSecs');
+        if (elD) elD.textContent = String(d).padStart(2, '0');
+        if (elH) elH.textContent = String(h).padStart(2, '0');
+        if (elM) elM.textContent = String(m).padStart(2, '0');
+        if (elS) elS.textContent = String(s).padStart(2, '0');
+      };
+      tick();
+      setInterval(tick, 1000);
+    }
+
     function initApp() {
       loadPersistedState();
       renderFaq();
       bindEvents();
       initInteractiveEnhancements();
       initMagicEffects();
+      startWhiteFridayCountdown();
       applyOwnerVisibility();
       if (!handleHashRoute()) {
         navigateTo('home');
