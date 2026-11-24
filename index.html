@@ -385,6 +385,41 @@
       pointer-events: auto;
     }
 
+
+    /* === WHITE FRIDAY INTERACTIVE UI & FX === */
+    @keyframes wfPulseGlow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.45), 0 20px 45px -15px rgba(217, 4, 41, 0.4); }
+      50% { box-shadow: 0 0 28px 4px rgba(244, 63, 94, 0.35), 0 24px 50px -12px rgba(217, 4, 41, 0.55); }
+    }
+    .wf-glow-card {
+      animation: wfPulseGlow 3.2s ease-in-out infinite;
+    }
+    @keyframes wfBadgeFloat {
+      0%, 100% { transform: translateY(0px) rotate(-1deg); }
+      50% { transform: translateY(-3px) rotate(1deg); }
+    }
+    .wf-float-badge {
+      animation: wfBadgeFloat 2.8s ease-in-out infinite;
+    }
+    @keyframes wfModalPop {
+      from { opacity: 0; transform: scale(0.92) translateY(14px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .wf-modal-anim {
+      animation: wfModalPop 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .wf-shimmer-text {
+      background: linear-gradient(90deg, #ffffff 0%, #fda4af 45%, #ffffff 90%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: wfTextShine 3.6s linear infinite;
+    }
+    @keyframes wfTextShine {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+
   </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -615,7 +650,7 @@
 
       <!-- ==================== WHITE FRIDAY INTERACTIVE SHOWCASE ==================== -->
       <div id="whiteFridayBanner" class="max-w-7xl mx-auto px-4 pt-6">
-        <div class="rounded-3xl bg-gradient-to-l from-gray-950 via-[#1d070c] to-[#8f021b] text-white p-5 sm:p-7 border border-red-500/30 shadow-xl relative overflow-hidden">
+        <div class="wf-glow-card rounded-3xl bg-gradient-to-l from-gray-950 via-[#1d070c] to-[#8f021b] text-white p-5 sm:p-7 border border-red-500/40 relative overflow-hidden">
           <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-5 relative z-10">
             <div class="space-y-2 max-w-2xl">
               <div class="inline-flex items-center gap-2 bg-red-600/90 text-white px-3.5 py-1 rounded-full text-xs font-black tracking-wide">
@@ -654,6 +689,20 @@
                 تصفح عروض الجمعة البيضاء
               </button>
             </div>
+          </div>
+
+          
+          <!-- Interactive White Friday Filter Tabs & Replay Popup Trigger -->
+          <div class="flex flex-wrap items-center justify-between gap-3 mt-5 pt-4 border-t border-white/10 relative z-10">
+            <div class="flex flex-wrap gap-2">
+              <button type="button" id="wfFilterAllBtn" onclick="setWfShowcaseFilter('all')" class="px-3.5 py-1.5 rounded-xl text-xs font-black bg-red-600 text-white transition">جميع عروض الجمعة البيضاء</button>
+              <button type="button" id="wfFilterGamingBtn" onclick="setWfShowcaseFilter('gaming')" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-white/10 text-gray-200 hover:bg-white/20 transition">لابتوبات الألعاب (Gaming)</button>
+              <button type="button" id="wfFilterBusinessBtn" onclick="setWfShowcaseFilter('business')" class="px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-white/10 text-gray-200 hover:bg-white/20 transition">لابتوبات الأعمال والدراسة</button>
+            </div>
+            <button type="button" onclick="openWhiteFridayModal(true)" class="inline-flex items-center gap-1.5 text-xs font-extrabold text-red-300 hover:text-white bg-white/5 hover:bg-white/15 px-3 py-1.5 rounded-xl transition">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+              إعادة عرض نافذة الجمعة البيضاء
+            </button>
           </div>
 
           <!-- Interactive White Friday Cards Strip -->
@@ -2105,6 +2154,40 @@
     <button type="button" onclick="openWhatsAppMessage('مرحباً متجر KH Product، أود الاستفسار عن المنتجات والعروض المتوفرة.')" class="wa-pulse w-12 h-12 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white shadow-xl flex items-center justify-center transition" title="تواصل فوري عبر واتساب" aria-label="تواصل عبر واتساب">
       <i data-lucide="message-circle" class="w-6 h-6"></i>
     </button>
+  </div>
+
+
+  <!-- White Friday Entry Popup Modal (Shown on First Arrival, Replayable via Button) -->
+  <div id="whiteFridayEntryModal" class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="wf-modal-anim bg-gray-950 text-white border border-red-500/40 rounded-3xl max-w-xl w-full p-6 sm:p-7 shadow-2xl space-y-5 relative overflow-hidden">
+      <div class="absolute -top-20 -right-20 w-56 h-56 rounded-full bg-red-600/25 blur-3xl pointer-events-none"></div>
+      <div class="flex items-start justify-between gap-3 relative z-10">
+        <div class="space-y-1.5">
+          <span class="wf-float-badge inline-flex items-center gap-1.5 bg-red-600 text-white px-3.5 py-1 rounded-full text-xs font-black">
+            <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+            WHITE FRIDAY — عروض الجمعة البيضاء
+          </span>
+          <h3 class="text-xl sm:text-2xl font-black wf-shimmer-text">أقوى تخفيضات الجمعة البيضاء في متجر KH Product</h3>
+          <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+            استفد من الأسعار المخفّضة المعتمدة بالدولار والليرة السورية (1$ = 15,300 ل.س) مع كفالة الوكالة الرسمية وتوصيل لكافة المحافظات.
+          </p>
+        </div>
+        <button type="button" onclick="dismissWhiteFridayModal()" class="p-2 rounded-xl bg-white/10 hover:bg-red-600 text-gray-200 hover:text-white transition shrink-0" aria-label="إغلاق إعلان الجمعة البيضاء">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div id="wfModalHighlights" class="grid sm:grid-cols-2 gap-3 relative z-10"></div>
+
+      <div class="flex flex-wrap items-center justify-between gap-2.5 pt-2 border-t border-white/10 relative z-10">
+        <button type="button" onclick="dismissWhiteFridayModal(); openCatalogCategory('عروض الجمعة البيضاء')" class="flex-1 kh-gradient text-white font-black py-3 px-5 rounded-2xl shadow-lg hover:opacity-95 transition text-xs sm:text-sm text-center">
+          اكتشف جميع عروض الجمعة البيضاء
+        </button>
+        <button type="button" onclick="dismissWhiteFridayModal()" class="px-4 py-3 rounded-2xl bg-white/10 hover:bg-white/20 text-gray-200 font-bold text-xs sm:text-sm transition">
+          متابعة إلى الرئيسية
+        </button>
+      </div>
+    </div>
   </div>
 
   <!-- Toast Container -->
@@ -8336,12 +8419,70 @@
     }
 
 
+
+    let wfShowcaseFilter = 'all';
+
+    function setWfShowcaseFilter(mode) {
+      wfShowcaseFilter = mode;
+      const map = { all: 'wfFilterAllBtn', gaming: 'wfFilterGamingBtn', business: 'wfFilterBusinessBtn' };
+      Object.entries(map).forEach(([k, id]) => {
+        const btn = document.getElementById(id);
+        if (!btn) return;
+        btn.className = k === mode
+          ? 'px-3.5 py-1.5 rounded-xl text-xs font-black bg-red-600 text-white transition'
+          : 'px-3.5 py-1.5 rounded-xl text-xs font-extrabold bg-white/10 text-gray-200 hover:bg-white/20 transition';
+      });
+      renderWhiteFridayStrip();
+    }
+
+    function openWhiteFridayModal(force = false) {
+      const modal = document.getElementById('whiteFridayEntryModal');
+      if (!modal) return;
+      const seenKey = 'kh_wf_modal_seen_2026_v1';
+      if (!force && safeGet(seenKey, false)) return;
+
+      const highlights = document.getElementById('wfModalHighlights');
+      const wfList = state.products.filter(p => p.category === 'عروض الجمعة البيضاء' || String(p.id || '').startsWith('KH-WF-')).slice(0, 4);
+      if (highlights && wfList.length > 0) {
+        highlights.innerHTML = wfList.map(p => {
+          const cur = getDisplayPrice(p);
+          const old = getDisplayOldPrice(p);
+          return `
+            <div onclick="dismissWhiteFridayModal(); navigateTo('product', '${escapeHtml(p.id)}')" class="bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl p-3 flex items-center gap-3 cursor-pointer transition">
+              <div class="w-12 h-12 rounded-xl bg-white p-1 shrink-0 overflow-hidden">
+                ${renderProductImageHtml(p.imageUrl, p.name, 'w-full h-full object-contain')}
+              </div>
+              <div class="min-w-0 flex-1">
+                <div class="text-xs font-black text-white truncate">${escapeHtml(p.name.replace('White Friday Deal — ', ''))}</div>
+                <div class="flex items-baseline gap-1.5 mt-0.5">
+                  <span class="text-xs font-black text-red-400">${formatUsd(cur)}</span>
+                  ${old > cur ? `<span class="text-[10px] text-gray-400 line-through">${formatUsd(old)}</span>` : ''}
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      modal.classList.remove('hidden');
+      fireMiniCelebration();
+      refreshIcons();
+    }
+
+    function dismissWhiteFridayModal() {
+      safeSet('kh_wf_modal_seen_2026_v1', true);
+      closeModal('whiteFridayEntryModal');
+    }
+
     function renderWhiteFridayStrip() {
       const grid = document.getElementById('whiteFridayCardsGrid');
       if (!grid) return;
-      const wfItems = state.products.filter(p => p.category === 'عروض الجمعة البيضاء' || String(p.id || '').startsWith('KH-WF-')).slice(0, 3);
+      let wfItems = state.products.filter(p => p.category === 'عروض الجمعة البيضاء' || String(p.id || '').startsWith('KH-WF-'));
+      if (wfShowcaseFilter === 'gaming') wfItems = wfItems.filter(p => /ROG|Legion|Vector|RTX/i.test(p.name));
+      if (wfShowcaseFilter === 'business') wfItems = wfItems.filter(p => /ThinkPad|OmniBook|Aspire/i.test(p.name));
+      wfItems = wfItems.slice(0, 3);
       if (wfItems.length === 0) {
-        grid.innerHTML = '';
+        grid.innerHTML = '<div class="col-span-full text-center text-xs text-gray-300 py-4">لا توجد عروض مطابقة لهذا الفلتر حالياً.</div>';
         return;
       }
       grid.innerHTML = wfItems.map(p => {
@@ -8349,21 +8490,27 @@
         const oldUsd = getDisplayOldPrice(p);
         const savePct = oldUsd > curUsd ? Math.round((1 - curUsd / oldUsd) * 100) : 0;
         return `
-          <div class="bg-white/95 text-gray-900 rounded-2xl p-3.5 flex items-center gap-3.5 shadow-md hover:-translate-y-0.5 transition cursor-pointer" onclick="navigateTo('product', '${escapeHtml(p.id)}')">
-            <div class="w-16 h-16 rounded-xl bg-gray-50 border border-gray-200 overflow-hidden shrink-0">
-              ${renderProductImageHtml(p.imageUrl, p.name, 'w-full h-full object-contain')}
+          <div class="bg-white/95 text-gray-900 rounded-2xl p-3.5 shadow-md hover:-translate-y-0.5 transition space-y-3">
+            <div class="flex items-center gap-3.5 cursor-pointer" onclick="navigateTo('product', '${escapeHtml(p.id)}')">
+              <div class="w-16 h-16 rounded-xl bg-gray-50 border border-gray-200 overflow-hidden shrink-0">
+                ${renderProductImageHtml(p.imageUrl, p.name, 'w-full h-full object-contain')}
+              </div>
+              <div class="min-w-0 flex-1 space-y-1">
+                <div class="flex items-center justify-between gap-1">
+                  <span class="text-[10px] font-black bg-red-600 text-white px-2 py-0.5 rounded-full">WHITE FRIDAY ${savePct > 0 ? '-' + savePct + '%' : ''}</span>
+                  <span class="text-[10px] font-bold text-gray-500">${escapeHtml(p.brand || '')}</span>
+                </div>
+                <div class="text-xs font-black text-gray-950 truncate">${escapeHtml(p.name.replace('White Friday Deal — ', ''))}</div>
+                <div class="flex items-baseline gap-2">
+                  <span class="text-sm font-black text-red-600">${formatUsd(curUsd)}</span>
+                  ${oldUsd > curUsd ? `<span class="text-[11px] text-gray-400 line-through font-bold">${formatUsd(oldUsd)}</span>` : ''}
+                  <span class="text-[10px] font-bold text-gray-600 mr-auto">${formatSyp(curUsd)}</span>
+                </div>
+              </div>
             </div>
-            <div class="min-w-0 flex-1 space-y-1">
-              <div class="flex items-center justify-between gap-1">
-                <span class="text-[10px] font-black bg-red-600 text-white px-2 py-0.5 rounded-full">WHITE FRIDAY ${savePct > 0 ? '-' + savePct + '%' : ''}</span>
-                <span class="text-[10px] font-bold text-gray-500">${escapeHtml(p.brand || '')}</span>
-              </div>
-              <div class="text-xs font-black text-gray-950 truncate">${escapeHtml(p.name.replace('White Friday Deal — ', ''))}</div>
-              <div class="flex items-baseline gap-2">
-                <span class="text-sm font-black text-red-600">${formatUsd(curUsd)}</span>
-                ${oldUsd > curUsd ? `<span class="text-[11px] text-gray-400 line-through font-bold">${formatUsd(oldUsd)}</span>` : ''}
-                <span class="text-[10px] font-bold text-gray-600 mr-auto">${formatSyp(curUsd)}</span>
-              </div>
+            <div class="grid grid-cols-2 gap-2 pt-2 border-t border-gray-100">
+              <button type="button" onclick="addToCart('${escapeHtml(p.id)}')" class="bg-gray-950 hover:bg-gray-800 text-white text-[11px] font-extrabold py-1.5 rounded-xl transition">أضف للسلة</button>
+              <button type="button" onclick="quickWhatsAppOrder('${escapeHtml(p.id)}')" class="kh-gradient text-white text-[11px] font-extrabold py-1.5 rounded-xl transition">طلب واتساب</button>
             </div>
           </div>
         `;
@@ -8418,6 +8565,7 @@
           }
         });
       }
+      setTimeout(() => openWhiteFridayModal(false), 650);
       refreshIcons();
     }
 
